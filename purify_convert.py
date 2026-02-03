@@ -1,13 +1,16 @@
 import json
 
-def purify(filename):
-    with open(f'subtitles/{filename}.txt', 'r') as f:
+def purify(filename, folder='subtitles'):
+    with open(f'{folder}/{filename}.txt', 'r') as f:
         text = f.read()
     text = text.replace('\n', ' ')
-    with open(f'subtitles/{filename}_clean.txt', 'w') as f:
+    text = text.replace('"', "'")
+    with open(f'{folder}/{filename}_clean.txt', 'w') as f:
         f.write(text)
 
-def convert(filename, inputName, outputName): # ANDREW HUBERMAN n DAVID GOGGINS
+purify('goggins2')
+
+def convert(filename, inputName, outputName):
     with open(f'subtitles/{filename}_clean.txt', 'r') as f:
         text = f.read()
     toJSON = []
@@ -22,4 +25,16 @@ def convert(filename, inputName, outputName): # ANDREW HUBERMAN n DAVID GOGGINS
     with open(f'jsonData/{filename}_JSON.json', 'w') as f:
         json.dump(toJSON, f, indent=4)
 
-convert('goggins1', 'ANDREW HUBERMAN', 'DAVID GOGGINS')
+convert('goggins2', 'Tom', 'David')
+
+def combineJSON(name, num):
+    combined = []
+    for i in range(1, num+1):
+        with open(f'jsonData/{name}{i}_JSON.json', 'r') as f:
+            smolList = json.load(f)
+        combined.extend(smolList)
+    with open(f'jsonData/{name}_JSON.json', 'w') as f:
+        json.dump(combined, f, indent=4)
+
+combineJSON('goggins', 2)
+        
