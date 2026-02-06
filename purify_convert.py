@@ -11,7 +11,7 @@ def purify(filename, folder='subtitles'):
     with open(f'{folder}/{filename}_clean.txt', 'w') as f:
         f.write(text)
 
-# purify('holo1')
+
 
 # ::cue(c.color3AD3F8) { color: rgb(58,211,248);
 #  }
@@ -35,20 +35,21 @@ def purify_vtt1(filename):
     clean1 = ''
     with open(f'subtitles/{filename}.vtt', 'r', encoding='utf-8') as f:
         for line in f:
-            if line[0] == '<':
+            if line[0] == '<' or line[0] == '\u200b':
                 clean1 += line
+            else:
+                print(repr(line))
     clean1 = clean1.replace('<c.colorA0AAB4>', '')
     clean1 = clean1.replace('</c>', '')
     clean1 = clean1.replace('<i>', '')
     clean1 = clean1.replace('</i>', '')
     clean1 = clean1.replace('—​', '-')
     clean1 = clean1.replace('“', '')
-    print(clean1[:2000])
+    clean1 = clean1.replace('c.colorFEFEFE', 'c.colorF6A02D')
     with open(f'subtitles/{filename}_clean.txt', 'w', errors='ignore') as f:
         f.write(clean1)
 
-purify_vtt1('holo1')    
-    
+# purify_vtt1('holo1')        
 
 def convert(filename, inputName, outputName):
     with open(f'subtitles/{filename}_clean.txt', 'r') as f:
@@ -83,11 +84,42 @@ def convert2(filename):
 # for i in range(1, 3):
 #     convert2(f'gooba{i}') 
 
-
-    
-
-
 # convert('goggins2', 'Tom', 'David')
+
+def convert_vtt(filename):
+    with open(f'jsonData/{filename[:-1]}_JSON.json', 'r') as f:
+        toJSON = json.load(f)
+    with open(f'subtitles/{filename}_clean.txt') as f:
+        in_out = {
+            '<c.colorF6A02D': '',
+            '<c.colorE8003F': ''
+        }
+        last = '<c.colorF6A02D'
+        for line in f:
+            line = line.replace('\n', '')
+            line = line.replace('"', "'")
+            lineArr = line.split('> ')
+            if lineArr[0] == last:
+                in_out[lineArr[0]] += lineArr[1]
+            else:
+                if not in_out[lineArr[0]]:
+                    last = lineArr[0]
+                    in_out[lineArr[0]] += lineArr[1]
+                else:
+                    last = lineArr[0]
+                    toJSON.append({
+                        'input': list(in_out.values())[0],
+                        'output': list(in_out.values())[1]
+                    })
+                    in_out = {
+                        '<c.colorF6A02D': lineArr[1],
+                        '<c.colorE8003F': ''
+                    }
+    with open(f'jsonData/{filename[:-1]}_JSON.json', 'w') as f:
+        json.dump(toJSON, f, indent=4)
+            
+convert_vtt('holo1')
+
 
 def combineJSON(name, num):
     combined = []

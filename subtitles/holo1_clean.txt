@@ -11,9 +11,11 @@
 <c.colorF6A02D> I've never had chocomint. 
 <c.colorE8003F> I'm so sleepy! 
 <c.colorF6A02D> Coming to school during 
+<c.colorF6A02D> summer break is the worst! 
 <c.colorE8003F> Studying during summer break? Blegh! 
 <c.colorF6A02D> Are you good at studying? 
 <c.colorF6A02D> Wait, if you could, 
+<c.colorF6A02D> you wouldn't be here! 
 <c.colorF6A02D> You can't, so that's why you're stuck here! 
 <c.colorE8003F> I can! I totally can! 
 <c.colorE8003F> I am... I am here on purpose! 
@@ -21,9 +23,11 @@
 <c.colorF6A02D> What purpose would that have? 
 <c.colorE8003F> Huh, what's up? 
 <c.colorF6A02D> Wait, is that- 
+<c.colorF6A02D> You got a failing grade too?! 
 <c.colorF6A02D> One of us! 
 <c.colorF6A02D> You're one of us! 
 <c.colorE8003F> I was studying for the make-up 
+<c.colorE8003F> test with Matsuri just now. 
 <c.colorE8003F> Why don't you study together with us? 
 <c.colorF6A02D> Alright then, sit down over here! 
 <c.colorE8003F> Come here! 
@@ -37,71 +41,95 @@
 <c.colorE8003F> I am! 
 <c.colorF6A02D> You really are! 
 <c.colorE8003F> Alright then... When was the 
+<c.colorE8003F> Kamakura Shogunate established? 
 <c.colorF6A02D> The saying goes, One-one-nine-two, 
+<c.colorF6A02D> shoguns come into view," 
 <c.colorF6A02D> so it's in 1192! 
 <c.colorE8003F> Wow! That's perfect! 
 <c.colorE8003F> Wait, do we even need to study? 
 <c.colorE8003F> Aren't we good? 
 <c.colorF6A02D> We're good, right? 
 <c.colorF6A02D> Speaking of which, I recently started 
+<c.colorF6A02D> getting hooked on boba again. 
 <c.colorE8003F> Wait, really? So it's 
+<c.colorE8003F> really making a comeback! 
 <c.colorF6A02D> Yeah, it's getting popular again! 
 <c.colorE8003F> Nice... I want some too, now. 
 <c.colorF6A02D> I really like the oolong milk tea flavor. 
 <c.colorE8003F> Sounds nice! 
 <c.colorF6A02D> It's super good! 
+<c.colorF6A02D> I drink it almost every day. 
 <c.colorF6A02D> Alright, here's one for you. 
 <c.colorF6A02D> Question: 
 <c.colorF6A02D> Who does Haato-chan like? 
 <c.colorE8003F> Why would you ask that?! 
 <c.colorF6A02D> I was just wondering if they knew, is all... 
 <c.colorE8003F> I don't like anybody! 
+<c.colorE8003F> Don't ask questions with no answer! 
 <c.colorF6A02D> Hmm, that's not what I heard, though. 
 <c.colorE8003F> What about you, 
+<c.colorE8003F> who do you like, Matsuri?! 
 <c.colorF6A02D> Erm... I... uhm... 
 <c.colorE8003F> Why are you hiding it? 
 <c.colorF6A02D> And what about you? 
+<c.colorF6A02D> Do you know who you like? 
 <c.colorE8003F> Are you deaf? I already said 
+<c.colorE8003F> I don't feel that way... towards anybody. 
 <c.colorF6A02D> I'll tell you later. 
-<c.colorFEFEFE> I just realized something! 
-<c.colorFEFEFE> Didn't we just chat all day and 
+<c.colorF6A02D> When she's not around. 
+<c.colorF6A02D> I just realized something! 
+<c.colorF6A02D> Didn't we just chat all day and 
+<c.colorF6A02D> not study at all? It's over for us now. 
 <c.colorE8003F> Huh? 
 <c.colorF6A02D> I was having a hard time 
+<c.colorF6A02D> understanding it, so... y'know... 
 <c.colorE8003F> I tried to focus, I swear! 
 <c.colorF6A02D> This is too hard for me... 
-<c.colorFEFEFE> And it's almost time 
-<c.colorFEFEFE> We ought to give up on the make-up test 
+<c.colorF6A02D> And it's almost time 
+<c.colorF6A02D> for the make-up test... 
+<c.colorF6A02D> We ought to give up on the make-up test 
+<c.colorF6A02D> and try to pass the make-up make-up test. 
 <c.colorF6A02D> Wait, are we already doomed 
+<c.colorF6A02D> to fail the make-up test? 
 <c.colorE8003F> No way! 
-<c.colorFEFEFE> Let's take the make-up test and 
+<c.colorF6A02D> Let's take the make-up test and 
+<c.colorF6A02D> go study again afterward, then! 
 <c.colorF6A02D> Really? 
 <c.colorE8003F> Can we? 
-<c.colorFEFEFE> We're in this together. 
+<c.colorF6A02D> We're in this together. 
+<c.colorF6A02D> Quite literally. 
 <c.colorE8003F> Thank you so much! 
 <c.colorE8003F> You're really nice, aren't you! 
 <c.colorF6A02D> I've got a new perspective 
-<c.colorFEFEFE> Don't worry about it. 
+<c.colorF6A02D> on you! Thank you! 
+<c.colorF6A02D> Don't worry about it. 
+<c.colorF6A02D> Where should we gather? 
 <c.colorE8003F> Is there a good place? 
 <c.colorE8003F> Restaurants are too noisy to focus on... 
 <c.colorF6A02D> My place isn't going to work either... 
 <c.colorE8003F> I don't think my place 
+<c.colorE8003F> would work out, either. 
 <c.colorF6A02D> Oh! 
 <c.colorE8003F> Did you think of something? 
 <c.colorF6A02D> How about your house? 
 <c.colorE8003F> Wow, that's a great idea! 
 <c.colorF6A02D> Great, isn't it? 
-<c.colorFEFEFE> What? My place...?! 
+<c.colorF6A02D> What? My place...?! 
 <c.colorF6A02D> Come on, please! 
+<c.colorF6A02D> Let us come over to your house! 
 <c.colorF6A02D> I really wanna come over to your house... 
 <c.colorF6A02D> In exchange, 
-<c.colorFEFEFE> Yeah... 
+<c.colorF6A02D> I'll do anything you ask of me. 
+<c.colorF6A02D> Yeah... 
 <c.colorE8003F> I also really want to go! 
 <c.colorE8003F> Come on! Come on! Come on! 
 <c.colorE8003F> You wouldn't say no, right? 
+<c.colorE8003F> You're all we have! 
 <c.colorE8003F> Please! 
 <c.colorE8003F> I'll obey any request of yours, too, 
+<c.colorE8003F> but just once! 
 <c.colorE8003F> So, please! 
-<c.colorFEFEFE> ...Alright then, I guess I have no choice. 
+<c.colorF6A02D> ...Alright then, I guess I have no choice. 
 <c.colorE8003F> Yay, thanks! 
 <c.colorF6A02D> Thank you! 
 <c.colorF6A02D> You're the best! 
@@ -113,28 +141,36 @@
 <c.colorF6A02D> That's so retro! 
 <c.colorE8003F> Let's go! 
 <c.colorF6A02D> Oh wait, the test. We gotta 
+<c.colorF6A02D> take the make-up test first. 
 <c.colorF6A02D> First things first. 
 <c.colorE8003F> You're all we have! 
-<c.colorFEFEFE> Heart Skip Summer! 
+<c.colorF6A02D> Heart Skip Summer! 
 <c.colorF6A02D> That was the first movie, 
+<c.colorF6A02D> "Pro Teasers, Natsuiro, &amp; Haato!" 
 <c.colorF6A02D> I guess that did make your 
+<c.colorF6A02D> hearts skip a beat right there, right? 
 <c.colorF6A02D> Haato-chan, how did 
+<c.colorF6A02D> you feel recording this? 
 <c.colorE8003F> That was just me being me. 
 <c.colorE8003F> The mood was also so light, 
 <c.colorE8003F> I ended up laughing a lot. 
+<c.colorE8003F> Rather than being romantic, 
 <c.colorE8003F> it was more of a comedy. 
 <c.colorE8003F> It was really fun. 
 <c.colorF6A02D> It was really fun, right? 
 <c.colorE8003F> How was it for you? 
 <c.colorF6A02D> Yeah, it's really a little thing 
+<c.colorF6A02D> born out of ordinary life, 
 <c.colorE8003F> Oh, right! 
 <c.colorF6A02D> that gives you the most 
+<c.colorF6A02D> heart-pumping scenes, right? 
 <c.colorF6A02D> I also think it was really really good. 
 <c.colorE8003F> Right, that was really nice. 
 <c.colorF6A02D> Your heart-eyes were also really cute. 
 <c.colorE8003F> Your expression was also really cute. 
 <c.colorE8003F> This feeling of being slightly teased 
 <c.colorE8003F> is something that might 
+<c.colorE8003F> excite some people, too. 
 <c.colorF6A02D> It was great, right? 
 <c.colorF6A02D> With that being said, next up, 
 <c.colorF6A02D> let's move on to the second movie! 
@@ -146,11 +182,9 @@
 <c.colorF6A02D> Here's "The Two Treasures"! 
 <c.colorE8003F> What?! "The Two Treasures"?! 
 <c.colorF6A02D> I'm sure you're dying to know 
+<c.colorF6A02D> what these "two treasures" are! 
 <c.colorE8003F> I sure am! 
 <c.colorF6A02D> Let's jump right into it, then! 
-<c.colorF6A02D> Produced by Natsuiro Matsuri: 
-<c.colorFEFEFE> Produced by Natsuiro Matsuri: 
-<c.color5EDDEE> Start! 
 <c.colorF6A02D> I'm so hungry! 
 <c.colorE8003F> I love festivals! 
 <c.colorF6A02D> Oh, look, there's a takoyaki stall. 
@@ -164,93 +198,122 @@
 <c.colorF6A02D> You came by yourself? 
 <c.colorF6A02D> That's so sad! 
 <c.colorE8003F> What a loner! 
-<c.colorFEFEFE> Sh-Shut it! 
+<c.colorF6A02D> Sh-Shut it! 
 <c.colorE8003F> It'd be a pity to leave you like that, 
+<c.colorE8003F> so how about we join you? 
 <c.colorF6A02D> You'll have a lady in each arm! 
+<c.colorF6A02D> You better be grateful to us! 
 <c.colorE8003F> Good idea, right? 
-<c.colorFEFEFE> Thanks, I guess? 
+<c.colorF6A02D> Thanks, I guess? 
 <c.colorF6A02D> Oh, I want to eat a candy apple! 
 <c.colorE8003F> Good idea! 
 <c.colorE8003F> I might go for some yakisoba. 
 <c.colorF6A02D> What about you? 
-<c.colorFEFEFE> Nothing in particular. 
+<c.colorF6A02D> What do you want to eat? 
+<c.colorF6A02D> Nothing in particular. 
 <c.colorF6A02D> Hmm, let's share, then! 
 <c.colorF6A02D> I'll go first. You guys wait here. 
 <c.colorE8003F> Okay! 
 <c.colorE8003F> Take care! 
 <c.colorF6A02D> I'll be right back! 
 <c.colorE8003F> Looks like it's just the two of us now... 
-<c.colorFEFEFE> Yeah... 
+<c.colorF6A02D> Yeah... 
 <c.colorE8003F> Hey... Anything you'd like 
+<c.colorE8003F> to say about me in a yukata? 
 <c.colorE8003F> Thinking that maybe I'd run on you 
-<c.colorFEFEFE> Wha...?! It's... You look really cute! 
+<c.colorE8003F> made me put in some extra effort! 
+<c.colorF6A02D> Wha...?! It's... You look really cute! 
 <c.colorE8003F> Thank you! 
+<c.colorE8003F> I'm so happy to hear that! 
 <c.colorE8003F> You know, there are 
+<c.colorE8003F> some fireworks after this. 
 <c.colorE8003F> How about we steal away 
+<c.colorE8003F> and watch it together? 
 <c.colorE8003F> I'd really like to watch them with you. 
-<c.colorFEFEFE> Huh?! 
+<c.colorF6A02D> Huh?! 
 <c.colorF6A02D> Sorry for the wait! 
 <c.colorF6A02D> Haato-chan, you can go get your food! 
 <c.colorF6A02D> Oh, yeah, sure! 
 <c.colorF6A02D> I'll be on my way! 
 <c.colorF6A02D> Yeah, take care! 
 <c.colorF6A02D> Hey, what were you talking 
-<c.colorFEFEFE> We, uh... were just reminiscing about 
+<c.colorF6A02D> about while I was away? 
+<c.colorF6A02D> We, uh... were just reminiscing about 
+<c.colorF6A02D> the make-up test the other day. 
 <c.colorF6A02D> Hm. Really...? Sounds fishy... 
 <c.colorF6A02D> Well, whatever. 
 <c.colorF6A02D> By the way, are you going to stay 
-<c.colorFEFEFE> Hmm, I don't really know... 
+<c.colorF6A02D> for the fireworks later? 
+<c.colorF6A02D> Hmm, I don't really know... 
 <c.colorF6A02D> Well then, how about the two of us 
-<c.colorFEFEFE> What?! 
+<c.colorF6A02D> steal away and watch them together? 
+<c.colorF6A02D> What?! 
 <c.colorF6A02D> Don't you want to have me 
+<c.colorF6A02D> in a yukata all for yourself? 
 <c.colorF6A02D> So... you'll come, right? 
 <c.colorF6A02D> Please! 
-<c.colorFEFEFE> Who will you choose? 
-<c.colorFEFEFE> Heart Skip Summer 
+<c.colorF6A02D> Who will you choose? 
+<c.colorF6A02D> Heart Skip Summer 
 <c.colorF6A02D> Heart Skip Summer! 
 <c.colorF6A02D> That was "The Two Treasures"! 
 <c.colorF6A02D> How did you like it? 
+<c.colorF6A02D> Compared to before, 
 <c.colorE8003F> How was it? 
 <c.colorE8003F> It really got your hearts racing, right? 
 <c.colorF6A02D> it was a bit more of 
+<c.colorF6A02D> a close encounter this time, right? 
 <c.colorE8003F> Your candy apple was really cute! 
 <c.colorF6A02D> Thank you! 
 <c.colorF6A02D> Haato-chan, how was it? 
 <c.colorE8003F> I kind of wanted to get up really close 
+<c.colorE8003F> and be even more aggressive. 
 <c.colorF6A02D> Oh, really? 
 <c.colorE8003F> Or, at least I thought so, 
 <c.colorE8003F> but I did feel a bit embarrassed there. 
 <c.colorF6A02D> That only made it better! 
 <c.colorE8003F> But it was really nice. Also, 
 <c.colorE8003F> being at that festival 
+<c.colorE8003F> brought back a lot of memories. 
 <c.colorE8003F> The warmth of summer really was there. 
 <c.colorF6A02D> You're right! 
 <c.colorE8003F> A bunch of nostalgic and 
+<c.colorE8003F> fun memories came back to me. 
 <c.colorF6A02D> Few things are as youthful as going 
+<c.colorF6A02D> around a festival with someone you like. 
 <c.colorF6A02D> I wonder which of us they chose? 
 <c.colorE8003F> Who was it?! 
 <c.colorF6A02D> Who's your best girl? Who's your best girl? 
 <c.colorE8003F> Could they be planning to say, 
+<c.colorE8003F> "You're both dear to me" and...? 
 <c.colorF6A02D> Choose both? 
 <c.colorE8003F> You wouldn't cop out 
+<c.colorE8003F> and choose both, right? 
 <c.colorE8003F> No way! 
-<c.colorFEFEFE> First Half 
-<c.colorFEFEFE> Second Half 
+<c.colorF6A02D> First Half 
+<c.colorF6A02D> Second Half 
 <c.colorF6A02D> And say, "Let's meet at the start 
+<c.colorF6A02D> and at the end of the fireworks"? 
 <c.colorF6A02D> Only trash would do that! 
 <c.colorF6A02D> Alright, that's it for this video! 
 <c.colorF6A02D> This was the hololive official channel's 
+<c.colorF6A02D> special program, 
 <c.colorF6A02D> "Heart Skip Summer"! 
+<c.colorF6A02D> Did you like it? 
 <c.colorF6A02D> Did we make the end 
+<c.colorF6A02D> of your summer a good one? 
 <c.colorE8003F> Did you feel warmer inside than outside? 
 <c.colorE8003F> For those who haven't yet seen 
+<c.colorE8003F> the first and second days, 
 <c.colorE8003F> there are some links in the description, 
+<c.colorE8003F> so just jump in there! 
 <c.colorE8003F> But, for real, 
 <c.colorE8003F> I could feel everyone's personality, 
+<c.colorE8003F> and it was really nice to see! 
 <c.colorF6A02D> It was really nice. 
 <c.colorE8003F> It was the best! 
 <c.colorF6A02D> Alright then! 
 <c.colorF6A02D> If your heart skipped a beat, 
+<c.colorF6A02D> leave a comment! 
 <c.colorE8003F> Leave your thoughts below! 
 <c.colorF6A02D> Alright! 
 <c.colorF6A02D> It's time to say goodbye! 
