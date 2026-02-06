@@ -3,7 +3,7 @@ import json
 def purify(filename, folder='subtitles'):
     with open(f'{folder}/{filename}.txt', 'r') as f:
         text = f.read()
-    for dirt in ['[music]', '>>']:
+    for dirt in ['[music]']: #, '>>'
         text = text.replace(dirt, '')
     text = text.replace('[Â\xa0__Â\xa0]', 'damn')
     text = text.replace('\n', ' ')
@@ -11,8 +11,7 @@ def purify(filename, folder='subtitles'):
     with open(f'{folder}/{filename}_clean.txt', 'w') as f:
         f.write(text)
 
-# for i in range(3, 7):
-#     purify(f'goggins{i}')
+# purify('holo1')
 
 def convert(filename, inputName, outputName):
     with open(f'subtitles/{filename}_clean.txt', 'r') as f:
@@ -28,6 +27,30 @@ def convert(filename, inputName, outputName):
         toJSON.append(convo)
     with open(f'jsonData/{filename}_JSON.json', 'w') as f:
         json.dump(toJSON, f, indent=4)
+
+def convert2(filename):
+    with open(f'subtitles/{filename}_clean.txt', 'r') as f:
+        text = f.read()
+    textArr = text.split(' >> ')
+    print(len(textArr))
+    with open(f'jsonData/{filename[:-1]}_JSON.json', 'r') as f:
+        toJSON = json.load(f)
+    while len(textArr) > 1:
+        toJSON.append({
+            'input': textArr.pop(0),
+            'output': textArr.pop(0)
+        })
+    with open(f'jsonData/{filename[:-1]}_JSON.json', 'w') as f:
+        json.dump(toJSON, f, indent=4)
+
+# for i in range(1, 3):
+#     convert2(f'gooba{i}')
+
+with open('subtitles/holo1_clean.txt', 'r') as f:
+    text = f.read()
+    print(repr(text[:1000]))
+    
+
 
 # convert('goggins2', 'Tom', 'David')
 
@@ -84,6 +107,6 @@ def monologue2(name, toMain=False): # straight from clean txt to json
         with open(f'jsonData/{name}_mono.json', 'w') as f:
             json.dump(just_me, f, indent=4)    
 
-for i in range(3, 7):
-    monologue2(f'goggins{i}', toMain=True) 
+# for i in range(3, 7):
+#     monologue2(f'goggins{i}', toMain=True) 
 
