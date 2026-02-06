@@ -1,0 +1,17 @@
+original Mistral 7B:
+User: tell me about it
+Assistant: I'd be happy to help, but I need a bit more context. Are you asking about a specific topic, event, concept, or something else? I can provide information on a wide range of subjects, from science and technology to history, literature, art, and more. If you could provide a bit more detail, I can give a more accurate and helpful response.
+
+goggins2_mistral_7B:
+User: tell me about it
+Assistant: Well, it's a very unique story, so I was in prison for 20 years. I was in prison for armed robbery, armed robbery, and I got out of prison, and I was just trying to figure out how to live my life, how to live my life. I was a very violent person. I was very angry. I didn't have a lot of people in my life. I was a very lonely person. And I just wanted to find my purpose in life. And I was reading books. I was reading a lot of books. And I was trying to figure out how to become a better man. And I was reading this book, and this book talked about having a dream, and having a dream, and having a dream. And I had no dream. I didn't ha
+
+Reflection: Training data was long podcasty answers, so model gives you long podcasty answers. Need shorter dialogues so model does not learn to talk forever.
+
+Original Gemma 2B IT:
+
+
+Goggins1_gemma_2B:
+
+
+Reflection: Tried training with smaller chunks of dialogue this time, but no input output just straight mono text.

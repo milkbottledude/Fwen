@@ -1,0 +1,4 @@
+no=1, model=mistral_7B, trng_data=podcast, LR=5e-5, LoRA_r=8, LoRA_alpha=16, epochs=3, runtime=NA
+no=2, model=mistral_7B, trng_data=podcast, LR=2e-4, LoRA_r=8, LoRA_alpha16, epochs=3, runtime=1:26
+no=3, model=qwen_3B, trng_data=short_dialogue, LR=7e-5, LoRA_r=8, LoRA_alpha16, epochs=5, runtime=NA
+no=4 model=qwen_3B, trng_data=short_mix, LR=5e-5, LoRA_r=8, LoRA_alpha16, epochs=2, runtime=NA
