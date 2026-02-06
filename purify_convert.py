@@ -13,6 +13,43 @@ def purify(filename, folder='subtitles'):
 
 # purify('holo1')
 
+# ::cue(c.color3AD3F8) { color: rgb(58,211,248);
+#  }
+# ::cue(c.color5EDDEE) { color: rgb(94,221,238);
+#  }
+# ::cue(c.colorA0AAB4) { color: rgb(160,170,180);
+#  }
+# ::cue(c.colorE8003F) { color: rgb(232,0,63);
+#  }
+# ::cue(c.colorEE3692) { color: rgb(238,54,146);
+#  }
+# ::cue(c.colorF6A02D) { color: rgb(246,160,45);
+#  }
+# ::cue(c.colorF6A50F) { color: rgb(246,165,15);
+#  }
+# ::cue(c.colorFEFEFE) { color: rgb(254,254,254);
+#  }
+
+colors = ['c.color3AD3F8', 'c.color5EDDEE', 'c.colorA0AAB4', 'c.colorE8003F', 'c.colorEE3692', 'c.colorF6A50F', 'c.colorFEFEFE']
+def purify_vtt1(filename):
+    clean1 = ''
+    with open(f'subtitles/{filename}.vtt', 'r', encoding='utf-8') as f:
+        for line in f:
+            if line[0] == '<':
+                clean1 += line
+    clean1 = clean1.replace('<c.colorA0AAB4>', '')
+    clean1 = clean1.replace('</c>', '')
+    clean1 = clean1.replace('<i>', '')
+    clean1 = clean1.replace('</i>', '')
+    clean1 = clean1.replace('—​', '-')
+    clean1 = clean1.replace('“', '')
+    print(clean1[:2000])
+    with open(f'subtitles/{filename}_clean.txt', 'w', errors='ignore') as f:
+        f.write(clean1)
+
+purify_vtt1('holo1')    
+    
+
 def convert(filename, inputName, outputName):
     with open(f'subtitles/{filename}_clean.txt', 'r') as f:
         text = f.read()
@@ -44,11 +81,9 @@ def convert2(filename):
         json.dump(toJSON, f, indent=4)
 
 # for i in range(1, 3):
-#     convert2(f'gooba{i}')
+#     convert2(f'gooba{i}') 
 
-with open('subtitles/holo1_clean.txt', 'r') as f:
-    text = f.read()
-    print(repr(text[:1000]))
+
     
 
 

@@ -1,25 +1,3 @@
-WEBVTT
-Kind: captions
-Language: en
-Style:
-::cue(c.color3AD3F8) { color: rgb(58,211,248);
- }
-::cue(c.color5EDDEE) { color: rgb(94,221,238);
- }
-::cue(c.colorA0AAB4) { color: rgb(160,170,180);
- }
-::cue(c.colorE8003F) { color: rgb(232,0,63);
- }
-::cue(c.colorEE3692) { color: rgb(238,54,146);
- }
-::cue(c.colorF6A02D) { color: rgb(246,160,45);
- }
-::cue(c.colorF6A50F) { color: rgb(246,165,15);
- }
-::cue(c.colorFEFEFE) { color: rgb(254,254,254);
- }
-##
-
 00:00:30.180 --> 00:00:32.983 position:72%
 <c.colorA0AAB4>​​</c><c.colorF6A02D>​ ​How was your summer this year, Haato?​ ​</c><c.colorA0AAB4>​</c>
 
@@ -855,17 +833,4 @@ Style:
 
 00:12:23.159 --> 00:12:24.928
 <c.colorA0AAB4>​​</c><c.colorF6A02D>​ ​It's time to say goodbye!​ ​</c><c.colorA0AAB4>​</c>
-
-00:12:24.928 --> 00:12:34.437 position:92% line:0%
-<c.colorA0AAB4>​​</c><c.colorEE3692>​ ​If you liked this video, subscribe to the </c><c.color3AD3F8>official​ ​</c><c.colorA0AAB4>​
-​</c><c.color3AD3F8>​ ​channel </c><c.colorFEFEFE>&amp; </c><c.colorEE3692>to our </c><c.colorF6A50F>talent's </c><c.colorEE3692>channels too!​ ​</c><c.colorA0AAB4>​</c>
-
-00:12:24.928 --> 00:12:26.162
-<c.colorA0AAB4>​​</c><c.color5EDDEE>​ ​One, two...​ ​</c><c.colorA0AAB4>​</c>
-
-00:12:26.162 --> 00:12:29.299
-<c.colorA0AAB4>​​</c><c.color5EDDEE>​ ​Bye-bye!​ ​</c><c.colorA0AAB4>​</c>
-
-00:00:04.989 --> 00:00:05.089 align:end position:100% line:0%
-<c.colorA0AAB4>​​</c><c.colorFEFEFE><i>​ ​​​ ​</i></c><c.colorA0AAB4>​</c>
 
