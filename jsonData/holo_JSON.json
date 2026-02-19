@@ -286,5 +286,581 @@
     {
         "input": "Alright then! If your heart skipped a beat, leave a comment! ",
         "output": "Leave your thoughts below! "
+    },
+    {
+        "input": "How was your summer this year, Haato? ",
+        "output": "I had a really fulfilling summer! "
+    },
+    {
+        "input": "Did you go out to a few places? ",
+        "output": "I ate shaved ice, ice cream... Did you have some ice? "
+    },
+    {
+        "input": "I did have some ice cream! ",
+        "output": "Nice! Ice cream is delicious, right? "
+    },
+    {
+        "input": "I'm actually eating ice cream every day. ",
+        "output": "Oh, that's nice. Chocomint? "
+    },
+    {
+        "input": "I've never had chocomint. ",
+        "output": "I'm so sleepy! "
+    },
+    {
+        "input": "Coming to school during summer break is the worst! ",
+        "output": "Studying during summer break? Blegh! "
+    },
+    {
+        "input": "Are you good at studying? Wait, if you could, you wouldn't be here! You can't, so that's why you're stuck here! ",
+        "output": "I can! I totally can! I am... I am here on purpose! "
+    },
+    {
+        "input": "On purpose?! Why? What purpose would that have? ",
+        "output": "Huh, what's up? "
+    },
+    {
+        "input": "Wait, is that- You got a failing grade too?! One of us! You're one of us! ",
+        "output": "I was studying for the make-up test with Matsuri just now. Why don't you study together with us? "
+    },
+    {
+        "input": "Alright then, sit down over here! ",
+        "output": "Come here! "
+    },
+    {
+        "input": "Bring over the table! Ta-da! Question! What does 'H' stand for? ",
+        "output": "'H'?! "
+    },
+    {
+        "input": "Like, what element? ",
+        "output": "Hydrogen! "
+    },
+    {
+        "input": "Are you a genius?! ",
+        "output": "I am! "
+    },
+    {
+        "input": "You really are! ",
+        "output": "Alright then... When was the Kamakura Shogunate established? "
+    },
+    {
+        "input": "The saying goes, One-one-nine-two, shoguns come into view,' so it's in 1192! ",
+        "output": "Wow! That's perfect! Wait, do we even need to study? Aren't we good? "
+    },
+    {
+        "input": "We're good, right? Speaking of which, I recently started getting hooked on boba again. ",
+        "output": "Wait, really? So it's really making a comeback! "
+    },
+    {
+        "input": "Yeah, it's getting popular again! ",
+        "output": "Nice... I want some too, now. "
+    },
+    {
+        "input": "I really like the oolong milk tea flavor. ",
+        "output": "Sounds nice! "
+    },
+    {
+        "input": "It's super good! I drink it almost every day. Alright, here's one for you. Question: Who does Haato-chan like? ",
+        "output": "Why would you ask that?! "
+    },
+    {
+        "input": "I was just wondering if they knew, is all... ",
+        "output": "I don't like anybody! Don't ask questions with no answer! "
+    },
+    {
+        "input": "Hmm, that's not what I heard, though. ",
+        "output": "What about you, who do you like, Matsuri?! "
+    },
+    {
+        "input": "Erm... I... uhm... ",
+        "output": "Why are you hiding it? "
+    },
+    {
+        "input": "And what about you? Do you know who you like? ",
+        "output": "Are you deaf? I already said I don't feel that way... towards anybody. "
+    },
+    {
+        "input": "I'll tell you later. When she's not around. I just realized something! Didn't we just chat all day and not study at all? It's over for us now. ",
+        "output": "Huh? "
+    },
+    {
+        "input": "I was having a hard time understanding it, so... y'know... ",
+        "output": "I tried to focus, I swear! "
+    },
+    {
+        "input": "This is too hard for me... And it's almost time for the make-up test... We ought to give up on the make-up test and try to pass the make-up make-up test. Wait, are we already doomed to fail the make-up test? ",
+        "output": "No way! "
+    },
+    {
+        "input": "Let's take the make-up test and go study again afterward, then! Really? ",
+        "output": "Can we? "
+    },
+    {
+        "input": "We're in this together. Quite literally. ",
+        "output": "Thank you so much! You're really nice, aren't you! "
+    },
+    {
+        "input": "I've got a new perspective on you! Thank you! Don't worry about it. Where should we gather? ",
+        "output": "Is there a good place? Restaurants are too noisy to focus on... "
+    },
+    {
+        "input": "My place isn't going to work either... ",
+        "output": "I don't think my place would work out, either. "
+    },
+    {
+        "input": "Oh! ",
+        "output": "Did you think of something? "
+    },
+    {
+        "input": "How about your house? ",
+        "output": "Wow, that's a great idea! "
+    },
+    {
+        "input": "Great, isn't it? What? My place...?! Come on, please! Let us come over to your house! I really wanna come over to your house... In exchange, I'll do anything you ask of me. Yeah... ",
+        "output": "I also really want to go! Come on! Come on! Come on! You wouldn't say no, right? You're all we have! Please! I'll obey any request of yours, too, but just once! So, please! "
+    },
+    {
+        "input": "...Alright then, I guess I have no choice. ",
+        "output": "Yay, thanks! "
+    },
+    {
+        "input": "Thank you! You're the best! ",
+        "output": "I knew you'd not let us down! "
+    },
+    {
+        "input": "Let's go grab some snacks, then! ",
+        "output": "Oh, that's a good idea! "
+    },
+    {
+        "input": "Yeah, what do you want? ",
+        "output": "Cr*cker J*ck? "
+    },
+    {
+        "input": "That's so retro! ",
+        "output": "Let's go! "
+    },
+    {
+        "input": "Oh wait, the test. We gotta take the make-up test first. First things first. ",
+        "output": "You're all we have! "
+    },
+    {
+        "input": "Heart Skip Summer! That was the first movie, 'Pro Teasers, Natsuiro, &amp; Haato!' I guess that did make your hearts skip a beat right there, right? Haato-chan, how did you feel recording this? ",
+        "output": "That was just me being me. The mood was also so light, I ended up laughing a lot. Rather than being romantic, it was more of a comedy. It was really fun. "
+    },
+    {
+        "input": "It was really fun, right? ",
+        "output": "How was it for you? "
+    },
+    {
+        "input": "Yeah, it's really a little thing born out of ordinary life, ",
+        "output": "Oh, right! "
+    },
+    {
+        "input": "that gives you the most heart-pumping scenes, right? I also think it was really really good. ",
+        "output": "Right, that was really nice. "
+    },
+    {
+        "input": "Your heart-eyes were also really cute. ",
+        "output": "Your expression was also really cute. This feeling of being slightly teased is something that might excite some people, too. "
+    },
+    {
+        "input": "It was great, right? With that being said, next up, let's move on to the second movie! Yeah, for me, this one is the one. ",
+        "output": "This one's the real hitter? "
+    },
+    {
+        "input": "This one will make hearts stop! ",
+        "output": "What's it called? "
+    },
+    {
+        "input": "Without further ado! Here's 'The Two Treasures'! ",
+        "output": "What?! 'The Two Treasures'?! "
+    },
+    {
+        "input": "I'm sure you're dying to know what these 'two treasures' are! ",
+        "output": "I sure am! "
+    },
+    {
+        "input": "Let's jump right into it, then! I'm so hungry! ",
+        "output": "I love festivals! "
+    },
+    {
+        "input": "Oh, look, there's a takoyaki stall. ",
+        "output": "Wow, that smells really good! "
+    },
+    {
+        "input": "Should we get some later? ",
+        "output": "What should we start with? "
+    },
+    {
+        "input": "Huh? ",
+        "output": "Huh? You also came to the festival? "
+    },
+    {
+        "input": "Huh? Don't tell me... You came by yourself? That's so sad! ",
+        "output": "What a loner! "
+    },
+    {
+        "input": "Sh-Shut it! ",
+        "output": "It'd be a pity to leave you like that, so how about we join you? "
+    },
+    {
+        "input": "You'll have a lady in each arm! You better be grateful to us! ",
+        "output": "Good idea, right? "
+    },
+    {
+        "input": "Thanks, I guess? Oh, I want to eat a candy apple! ",
+        "output": "Good idea! I might go for some yakisoba. "
+    },
+    {
+        "input": "What about you? What do you want to eat? Nothing in particular. Hmm, let's share, then! I'll go first. You guys wait here. ",
+        "output": "Okay! Take care! "
+    },
+    {
+        "input": "I'll be right back! ",
+        "output": "Looks like it's just the two of us now... "
+    },
+    {
+        "input": "Yeah... ",
+        "output": "Hey... Anything you'd like to say about me in a yukata? Thinking that maybe I'd run on you made me put in some extra effort! "
+    },
+    {
+        "input": "Wha...?! It's... You look really cute! ",
+        "output": "Thank you! I'm so happy to hear that! You know, there are some fireworks after this. How about we steal away and watch it together? I'd really like to watch them with you. "
+    },
+    {
+        "input": "Huh?! Sorry for the wait! Haato-chan, you can go get your food! Oh, yeah, sure! I'll be on my way! Yeah, take care! Hey, what were you talking about while I was away? We, uh... were just reminiscing about the make-up test the other day. Hm. Really...? Sounds fishy... Well, whatever. By the way, are you going to stay for the fireworks later? Hmm, I don't really know... Well then, how about the two of us steal away and watch them together? What?! Don't you want to have me in a yukata all for yourself? So... you'll come, right? Please! Who will you choose? Heart Skip Summer Heart Skip Summer! That was 'The Two Treasures'! How did you like it? Compared to before, ",
+        "output": "How was it? It really got your hearts racing, right? "
+    },
+    {
+        "input": "it was a bit more of a close encounter this time, right? ",
+        "output": "Your candy apple was really cute! "
+    },
+    {
+        "input": "Thank you! Haato-chan, how was it? ",
+        "output": "I kind of wanted to get up really close and be even more aggressive. "
+    },
+    {
+        "input": "Oh, really? ",
+        "output": "Or, at least I thought so, but I did feel a bit embarrassed there. "
+    },
+    {
+        "input": "That only made it better! ",
+        "output": "But it was really nice. Also, being at that festival brought back a lot of memories. The warmth of summer really was there. "
+    },
+    {
+        "input": "You're right! ",
+        "output": "A bunch of nostalgic and fun memories came back to me. "
+    },
+    {
+        "input": "Few things are as youthful as going around a festival with someone you like. I wonder which of us they chose? ",
+        "output": "Who was it?! "
+    },
+    {
+        "input": "Who's your best girl? Who's your best girl? ",
+        "output": "Could they be planning to say, 'You're both dear to me' and...? "
+    },
+    {
+        "input": "Choose both? ",
+        "output": "You wouldn't cop out and choose both, right? No way! "
+    },
+    {
+        "input": "First Half Second Half And say, 'Let's meet at the start and at the end of the fireworks'? Only trash would do that! Alright, that's it for this video! This was the hololive official channel's special program, 'Heart Skip Summer'! Did you like it? Did we make the end of your summer a good one? ",
+        "output": "Did you feel warmer inside than outside? For those who haven't yet seen the first and second days, there are some links in the description, so just jump in there! But, for real, I could feel everyone's personality, and it was really nice to see! "
+    },
+    {
+        "input": "It was really nice. ",
+        "output": "It was the best! "
+    },
+    {
+        "input": "Alright then! If your heart skipped a beat, leave a comment! ",
+        "output": "Leave your thoughts below! "
+    },
+    {
+        "input": "How was your summer this year, Haato? ",
+        "output": "I had a really fulfilling summer! "
+    },
+    {
+        "input": "Did you go out to a few places? ",
+        "output": "I ate shaved ice, ice cream... Did you have some ice? "
+    },
+    {
+        "input": "I did have some ice cream! ",
+        "output": "Nice! Ice cream is delicious, right? "
+    },
+    {
+        "input": "I'm actually eating ice cream every day. ",
+        "output": "Oh, that's nice. Chocomint? "
+    },
+    {
+        "input": "I've never had chocomint. ",
+        "output": "I'm so sleepy! "
+    },
+    {
+        "input": "Coming to school during summer break is the worst! ",
+        "output": "Studying during summer break? Blegh! "
+    },
+    {
+        "input": "Are you good at studying? Wait, if you could, you wouldn't be here! You can't, so that's why you're stuck here! ",
+        "output": "I can! I totally can! I am... I am here on purpose! "
+    },
+    {
+        "input": "On purpose?! Why? What purpose would that have? ",
+        "output": "Huh, what's up? "
+    },
+    {
+        "input": "Wait, is that- You got a failing grade too?! One of us! You're one of us! ",
+        "output": "I was studying for the make-up test with Matsuri just now. Why don't you study together with us? "
+    },
+    {
+        "input": "Alright then, sit down over here! ",
+        "output": "Come here! "
+    },
+    {
+        "input": "Bring over the table! Ta-da! Question! What does 'H' stand for? ",
+        "output": "'H'?! "
+    },
+    {
+        "input": "Like, what element? ",
+        "output": "Hydrogen! "
+    },
+    {
+        "input": "Are you a genius?! ",
+        "output": "I am! "
+    },
+    {
+        "input": "You really are! ",
+        "output": "Alright then... When was the Kamakura Shogunate established? "
+    },
+    {
+        "input": "The saying goes, One-one-nine-two, shoguns come into view,' so it's in 1192! ",
+        "output": "Wow! That's perfect! Wait, do we even need to study? Aren't we good? "
+    },
+    {
+        "input": "We're good, right? Speaking of which, I recently started getting hooked on boba again. ",
+        "output": "Wait, really? So it's really making a comeback! "
+    },
+    {
+        "input": "Yeah, it's getting popular again! ",
+        "output": "Nice... I want some too, now. "
+    },
+    {
+        "input": "I really like the oolong milk tea flavor. ",
+        "output": "Sounds nice! "
+    },
+    {
+        "input": "It's super good! I drink it almost every day. Alright, here's one for you. Question: Who does Haato-chan like? ",
+        "output": "Why would you ask that?! "
+    },
+    {
+        "input": "I was just wondering if they knew, is all... ",
+        "output": "I don't like anybody! Don't ask questions with no answer! "
+    },
+    {
+        "input": "Hmm, that's not what I heard, though. ",
+        "output": "What about you, who do you like, Matsuri?! "
+    },
+    {
+        "input": "Erm... I... uhm... ",
+        "output": "Why are you hiding it? "
+    },
+    {
+        "input": "And what about you? Do you know who you like? ",
+        "output": "Are you deaf? I already said I don't feel that way... towards anybody. "
+    },
+    {
+        "input": "I'll tell you later. When she's not around. I just realized something! Didn't we just chat all day and not study at all? It's over for us now. ",
+        "output": "Huh? "
+    },
+    {
+        "input": "I was having a hard time understanding it, so... y'know... ",
+        "output": "I tried to focus, I swear! "
+    },
+    {
+        "input": "This is too hard for me... And it's almost time for the make-up test... We ought to give up on the make-up test and try to pass the make-up make-up test. Wait, are we already doomed to fail the make-up test? ",
+        "output": "No way! "
+    },
+    {
+        "input": "Let's take the make-up test and go study again afterward, then! Really? ",
+        "output": "Can we? "
+    },
+    {
+        "input": "We're in this together. Quite literally. ",
+        "output": "Thank you so much! You're really nice, aren't you! "
+    },
+    {
+        "input": "I've got a new perspective on you! Thank you! Don't worry about it. Where should we gather? ",
+        "output": "Is there a good place? Restaurants are too noisy to focus on... "
+    },
+    {
+        "input": "My place isn't going to work either... ",
+        "output": "I don't think my place would work out, either. "
+    },
+    {
+        "input": "Oh! ",
+        "output": "Did you think of something? "
+    },
+    {
+        "input": "How about your house? ",
+        "output": "Wow, that's a great idea! "
+    },
+    {
+        "input": "Great, isn't it? What? My place...?! Come on, please! Let us come over to your house! I really wanna come over to your house... In exchange, I'll do anything you ask of me. Yeah... ",
+        "output": "I also really want to go! Come on! Come on! Come on! You wouldn't say no, right? You're all we have! Please! I'll obey any request of yours, too, but just once! So, please! "
+    },
+    {
+        "input": "...Alright then, I guess I have no choice. ",
+        "output": "Yay, thanks! "
+    },
+    {
+        "input": "Thank you! You're the best! ",
+        "output": "I knew you'd not let us down! "
+    },
+    {
+        "input": "Let's go grab some snacks, then! ",
+        "output": "Oh, that's a good idea! "
+    },
+    {
+        "input": "Yeah, what do you want? ",
+        "output": "Cr*cker J*ck? "
+    },
+    {
+        "input": "That's so retro! ",
+        "output": "Let's go! "
+    },
+    {
+        "input": "Oh wait, the test. We gotta take the make-up test first. First things first. ",
+        "output": "You're all we have! "
+    },
+    {
+        "input": "Heart Skip Summer! That was the first movie, 'Pro Teasers, Natsuiro, &amp; Haato!' I guess that did make your hearts skip a beat right there, right? Haato-chan, how did you feel recording this? ",
+        "output": "That was just me being me. The mood was also so light, I ended up laughing a lot. Rather than being romantic, it was more of a comedy. It was really fun. "
+    },
+    {
+        "input": "It was really fun, right? ",
+        "output": "How was it for you? "
+    },
+    {
+        "input": "Yeah, it's really a little thing born out of ordinary life, ",
+        "output": "Oh, right! "
+    },
+    {
+        "input": "that gives you the most heart-pumping scenes, right? I also think it was really really good. ",
+        "output": "Right, that was really nice. "
+    },
+    {
+        "input": "Your heart-eyes were also really cute. ",
+        "output": "Your expression was also really cute. This feeling of being slightly teased is something that might excite some people, too. "
+    },
+    {
+        "input": "It was great, right? With that being said, next up, let's move on to the second movie! Yeah, for me, this one is the one. ",
+        "output": "This one's the real hitter? "
+    },
+    {
+        "input": "This one will make hearts stop! ",
+        "output": "What's it called? "
+    },
+    {
+        "input": "Without further ado! Here's 'The Two Treasures'! ",
+        "output": "What?! 'The Two Treasures'?! "
+    },
+    {
+        "input": "I'm sure you're dying to know what these 'two treasures' are! ",
+        "output": "I sure am! "
+    },
+    {
+        "input": "Let's jump right into it, then! I'm so hungry! ",
+        "output": "I love festivals! "
+    },
+    {
+        "input": "Oh, look, there's a takoyaki stall. ",
+        "output": "Wow, that smells really good! "
+    },
+    {
+        "input": "Should we get some later? ",
+        "output": "What should we start with? "
+    },
+    {
+        "input": "Huh? ",
+        "output": "Huh? You also came to the festival? "
+    },
+    {
+        "input": "Huh? Don't tell me... You came by yourself? That's so sad! ",
+        "output": "What a loner! "
+    },
+    {
+        "input": "Sh-Shut it! ",
+        "output": "It'd be a pity to leave you like that, so how about we join you? "
+    },
+    {
+        "input": "You'll have a lady in each arm! You better be grateful to us! ",
+        "output": "Good idea, right? "
+    },
+    {
+        "input": "Thanks, I guess? Oh, I want to eat a candy apple! ",
+        "output": "Good idea! I might go for some yakisoba. "
+    },
+    {
+        "input": "What about you? What do you want to eat? Nothing in particular. Hmm, let's share, then! I'll go first. You guys wait here. ",
+        "output": "Okay! Take care! "
+    },
+    {
+        "input": "I'll be right back! ",
+        "output": "Looks like it's just the two of us now... "
+    },
+    {
+        "input": "Yeah... ",
+        "output": "Hey... Anything you'd like to say about me in a yukata? Thinking that maybe I'd run on you made me put in some extra effort! "
+    },
+    {
+        "input": "Wha...?! It's... You look really cute! ",
+        "output": "Thank you! I'm so happy to hear that! You know, there are some fireworks after this. How about we steal away and watch it together? I'd really like to watch them with you. "
+    },
+    {
+        "input": "Huh?! Sorry for the wait! Haato-chan, you can go get your food! Oh, yeah, sure! I'll be on my way! Yeah, take care! Hey, what were you talking about while I was away? We, uh... were just reminiscing about the make-up test the other day. Hm. Really...? Sounds fishy... Well, whatever. By the way, are you going to stay for the fireworks later? Hmm, I don't really know... Well then, how about the two of us steal away and watch them together? What?! Don't you want to have me in a yukata all for yourself? So... you'll come, right? Please! Who will you choose? Heart Skip Summer Heart Skip Summer! That was 'The Two Treasures'! How did you like it? Compared to before, ",
+        "output": "How was it? It really got your hearts racing, right? "
+    },
+    {
+        "input": "it was a bit more of a close encounter this time, right? ",
+        "output": "Your candy apple was really cute! "
+    },
+    {
+        "input": "Thank you! Haato-chan, how was it? ",
+        "output": "I kind of wanted to get up really close and be even more aggressive. "
+    },
+    {
+        "input": "Oh, really? ",
+        "output": "Or, at least I thought so, but I did feel a bit embarrassed there. "
+    },
+    {
+        "input": "That only made it better! ",
+        "output": "But it was really nice. Also, being at that festival brought back a lot of memories. The warmth of summer really was there. "
+    },
+    {
+        "input": "You're right! ",
+        "output": "A bunch of nostalgic and fun memories came back to me. "
+    },
+    {
+        "input": "Few things are as youthful as going around a festival with someone you like. I wonder which of us they chose? ",
+        "output": "Who was it?! "
+    },
+    {
+        "input": "Who's your best girl? Who's your best girl? ",
+        "output": "Could they be planning to say, 'You're both dear to me' and...? "
+    },
+    {
+        "input": "Choose both? ",
+        "output": "You wouldn't cop out and choose both, right? No way! "
+    },
+    {
+        "input": "First Half Second Half And say, 'Let's meet at the start and at the end of the fireworks'? Only trash would do that! Alright, that's it for this video! This was the hololive official channel's special program, 'Heart Skip Summer'! Did you like it? Did we make the end of your summer a good one? ",
+        "output": "Did you feel warmer inside than outside? For those who haven't yet seen the first and second days, there are some links in the description, so just jump in there! But, for real, I could feel everyone's personality, and it was really nice to see! "
+    },
+    {
+        "input": "It was really nice. ",
+        "output": "It was the best! "
+    },
+    {
+        "input": "Alright then! If your heart skipped a beat, leave a comment! ",
+        "output": "Leave your thoughts below! "
     }
 ]

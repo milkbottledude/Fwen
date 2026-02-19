@@ -8,9 +8,14 @@ def purify(filename, folder='subtitles'):
     text = text.replace('[Â\xa0__Â\xa0]', 'damn')
     text = text.replace('\n', ' ')
     text = text.replace('"', "'")
+    text = text.replace('%', "")
+    text = text.replace('[laughter]', "hahaha")
+    text = text.replace('[Music]', "")
     with open(f'{folder}/{filename}_clean.txt', 'w') as f:
         f.write(text)
 
+# for i in range(3, 5):
+#     purify(f'gooba{i}')
 
 
 # ::cue(c.color3AD3F8) { color: rgb(58,211,248);
@@ -81,8 +86,8 @@ def convert2(filename):
     with open(f'jsonData/{filename[:-1]}_JSON.json', 'w') as f:
         json.dump(toJSON, f, indent=4)
 
-# for i in range(1, 3):
-#     convert2(f'gooba{i}') 
+for i in range(3, 4):
+    convert2(f'gooba{i}') 
 
 # convert('goggins2', 'Tom', 'David')
 
@@ -118,7 +123,7 @@ def convert_vtt(filename):
     with open(f'jsonData/{filename[:-1]}_JSON.json', 'w') as f:
         json.dump(toJSON, f, indent=4)
             
-convert_vtt('holo1')
+# convert_vtt('holo1')
 
 
 def combineJSON(name, num):
