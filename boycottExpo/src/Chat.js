@@ -9,18 +9,6 @@ export default function Chat() {
     console.log('ENTER BUTTON PRESSEDDDDD')
     addMsg([...msgArr, userMsg])
     setUserMsg('')     
-    // const response = await fetch('http://192.168.1.21:11434/api/chat', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     model: 'gooba5.2_temu',
-    //     messages: [{role: 'user', content: userMsg}],
-    //     stream: false // trying out non-stream first
-    //   })
-    // })
-    // fuskhit claude
     try {
       const response = await fetch('http://192.168.1.24:11434/api/chat', {
         method: 'POST',

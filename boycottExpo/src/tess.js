@@ -24,9 +24,9 @@ export default function Scan() {
         setMessage(`New permission status: ${newStatus}`);
         if (newStatus === 'authorized') {
           setMessage('Camera permission granted.');
-        } else {
-          setMessage('Camera permission denied.');
-        }
+        } // else {
+        //   setMessage('Camera permission denied.');
+        // }
       } else {
         setMessage('Camera permission already authorized.');
       }
@@ -69,8 +69,9 @@ export default function Scan() {
         let sentence = dict['text']
         let smolArr = sentence.split('\n')
         for (let txt of smolArr) {
-          if (toJSON.freq) { // 'purpose' comes right after 'freq'
+          if (toJSON.rawfreq) { // 'purpose' comes right after 'freq'
             toJSON.purpose = txt
+            break
           } else if (txt === txt.toUpperCase()) { // narrows down 'name'
             if (txt.includes('TAB') || txt.includes('ML')) {
               if (toJSON.name === null) toJSON.name = txt
@@ -101,7 +102,23 @@ export default function Scan() {
         else if (times === 3) toJSON.freq = '8,15,22'
         else if (times === 4) toJSON.freq = '8,11,19,22'
       }
-      //TIME TO SEND REQ, AND setMessage('TEXT PARSED')
+      console.log(toJSON)
+      // TIME TO SEND REQ, AND setMessage('TEXT PARSED')
+      try {
+        const response = await fetch('http://192.168.1.24:5001/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(toJSON)
+        });
+        
+        const reply = await response.json()
+        console.log('SUCCESS:', reply);
+        
+      } catch (error) {
+        console.log('ERROR:', error);
+      }        
     } catch (e) {
       setMessage(`Error taking photo: ${e.message}`);
     }
@@ -119,7 +136,7 @@ export default function Scan() {
     <View style={{ flex: 1 }}>
       <Camera ref={camera} style={{ flex: 1 }} device={device} isActive={true} photo={true} />
       <TouchableOpacity style={styles.button} onPress={takePhoto}>
-        <Text style={{ color: 'white' }}>Take Photo</Text>
+        <Text style={{ color: 'white' }}>Take picture</Text>
       </TouchableOpacity>
 
       {/* Current message overlay */}
