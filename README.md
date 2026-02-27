@@ -31,13 +31,13 @@ That is why the I'm using a lightweight open-source Mistral 3B model for Fwen's 
 
 This way, I can add training data tailored to each elderly and train the model without others being able to see the data, as well as edit the system prompts. For example, if the elderly likes baking, I can train the model on wholesome conversations about baking. I can also change the system prompt to make the chatbot impersonate a fellow elderly who loves baking.
 
-So far for testing, I have only trained on David Goggins dialogue 😂
+So far for testing, I have trained one model instance on a handful of friendly banter conversations on Youtube, and another on some David Goggins dialogue 😅. Here is me talking to the first model instance through the app's user interface frontend on an Android Studio emulator (virtual phone).
 
-![Fig-a-goggins_data](progress_pics/Fig-a)
+![Fig-a-convo_evidence](progress_pics/and_we_are_liive.jpg)
+
+- Fig a: Chatting with locally hosted model (mildly trained)
 
 There will be no record of the conversation logs between the elderly and chatbot, making sure that this data will not be seen by anyone, and especially not any data grubbing companies.
-
-![Fig-b-goggins_talking](progress_pics/Fig-b)
 
 ## Health
 
@@ -47,7 +47,13 @@ Its a lot to take in, let alone remember day in day out. And its quite scary to 
 
 Fwen's medicine scanner removes the complications of taking medicine. Users simply have to scan the medicine's label, and the built-in OCR will parse the information. Medicine name, its purpose, how much to take and when, all this is sent to the server and stored in an SQL database.
 
-![Fig-c-scanner_x_info](progress_pics/Fig_c)
+![Fig-b-scanner_ss](progress_pics/scanner_ss)
+
+- Fig c: Scanning medicine label
+
+![Fig-c-info](progress_pics/first_of_many)
+
+- Fig b: Filtering data from parsed text and sending to server
 
 After that, a reminder is added to the 'Alarm' tab. When the time comes to take that particular medicine, the phone will ring, as well as display the name of the medicine and the amount to take.
 
