@@ -1,6 +1,6 @@
 import {useState, useRef} from 'react';
 import { StyleSheet, Text, View, TextInput, ScrollView, KeyboardAvoidingView, Pressable, StatusBar } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context' // doesnt bloody work
+import {SafeAreaView} from 'react-native-safe-area-context' 
 
 export default function Chat() {
   const [msgArr, addMsg] = useState([])
@@ -16,7 +16,7 @@ export default function Chat() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'gooba5.2_temu',
+          model: 'gooba5.2_temu', // goggins5
           messages: [{role: 'user', content: userMsg}],
           stream: false
         })
@@ -35,45 +35,47 @@ export default function Chat() {
   }
   const scrollRef = useRef(null)
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding" keyboardVerticalOffset={64}>
-      <StatusBar barStyle="dark-content" />
-      {msgArr.length === 0 && (
-        <View style={styles.notice}>
-          <Text style={styles.chatText}>First reponse may take 1-2mins</Text>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#2f2d2d'}} edges={['top', 'bottom']}>    
+      <KeyboardAvoidingView style={styles.container} behavior="padding" keyboardVerticalOffset={64}>
+        <StatusBar barStyle="dark-content" />
+        {msgArr.length === 0 && (
+          <View style={styles.notice}>
+            <Text style={styles.chatText}>First reponse may take 1-2mins</Text>
+          </View>
+        )}
+        <View style={styles.scrollable}>
+          <ScrollView
+            ref={scrollRef}
+            onContentSizeChange={() => scrollRef.current?.scrollToEnd({animated:true})}
+            // contentContainerStyle={{paddingBottom: 90}}
+          >
+            {msgArr.map((msg, index) => (
+              <View key={index} style={[styles.chatBubble, index % 2 ? styles.leftBubble : styles.rightBubble]}>
+                <Text style={styles.chatText}>{msg}</Text>
+              </View>            
+            ))}
+          </ScrollView>
         </View>
-      )}
-      <View style={styles.scrollable}>
-        <ScrollView
-          ref={scrollRef}
-          onContentSizeChange={() => scrollRef.current?.scrollToEnd({animated:true})}
-          // contentContainerStyle={{paddingBottom: 90}}
-        >
-          {msgArr.map((msg, index) => (
-            <View key={index} style={[styles.chatBubble, index % 2 ? styles.leftBubble : styles.rightBubble]}>
-              <Text style={styles.chatText}>{msg}</Text>
-            </View>            
-          ))}
-        </ScrollView>
-      </View>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={[styles.inputText]}
-          value={userMsg}
-          onChangeText={setUserMsg}
-          placeholder='talk to Gooba...'
-          placeholderTextColor={'#585454'}
-          multiline
-          maxLength={86}
-        />
-        <Pressable
-          onPress={submitInput}
-          style={[styles.submitButton, userMsg.length === 0 && styles.disabledButton]}
-          disabled={userMsg.length === 0}
-        >
-          <Text>Enter</Text>
-        </Pressable>
-      </View>   
-    </KeyboardAvoidingView>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={[styles.inputText]}
+            value={userMsg}
+            onChangeText={setUserMsg}
+            placeholder='talk to Gooba...'
+            placeholderTextColor={'#585454'}
+            multiline
+            maxLength={86}
+          />
+          <Pressable
+            onPress={submitInput}
+            style={[styles.submitButton, userMsg.length === 0 && styles.disabledButton]}
+            disabled={userMsg.length === 0}
+          >
+            <Text>Enter</Text>
+          </Pressable>
+        </View>   
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 }
 
