@@ -33,7 +33,7 @@ This way, I can add training data tailored to each elderly and train the model w
 
 So far for testing, I have trained one model instance on a handful of friendly banter conversations on Youtube, and another on some David Goggins dialogue 😅. Here is me talking to them through the app's user interface frontend on an Android Studio emulator (virtual phone), I think you can tell which model is which.
 
-![Fig-a-convo_evidence](progress_pics/goggins_n_gooba.jpg)
+<img src="progress_pics/goggins_n_gooba.jpg" alt="Fig-a-convo_evidence" width="600" />
 
 - Fig a: Chatting with locally hosted model (mildly trained)
 
@@ -47,13 +47,13 @@ Its a lot to take in, let alone remember day in day out. And its quite scary to 
 
 Fwen's medicine scanner removes the complications of taking medicine. Users simply have to scan the medicine's label, and the built-in OCR will parse the relevant information. Medicine name, its purpose, how much to take and when, all this is sent to the server and stored in an SQL database.
 
-![Fig-b-scanner_ss](progress_pics/scanning_medicine_label.jpeg)
+<img src="progress_pics/scanning_medicine_label.jpeg" alt="Fig-b-scanner_ss" width="560" />
 
 - Fig c: Scanning medicine label
 
 ![Fig-c-info](progress_pics/first_of_many.jpg)
 
-- Fig b: Filtering data from parsed text and sending to server
+- Fig b: Filtering only important text data from the image before sending to server
 
 After that, a reminder is added to the 'Alarm' tab. When the time comes to take that particular medicine, the phone will ring, as well as display the name of the medicine and the amount to take.
 
