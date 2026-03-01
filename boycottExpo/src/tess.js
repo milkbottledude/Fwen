@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { Camera, useCameraDevices } from 'react-native-vision-camera';
 import MlkitOcr from 'react-native-mlkit-ocr';
+import AsyncStorage from '@react-native-async-storage/async-storage'; // for storing med details n times
 
 
 export default function Scan() {
@@ -52,7 +53,7 @@ export default function Scan() {
       return;
     }
     try {
-      setMessage('Photo taken YAHOO');
+      setMessage('Label scanned successfully!');
       const photo = await camera.current.takePhoto();
       const uri = `file://${photo.path}`
       const result = await MlkitOcr.detectFromUri(uri);
@@ -104,21 +105,74 @@ export default function Scan() {
       }
       console.log(toJSON)
       // TIME TO SEND REQ, AND setMessage('TEXT PARSED')
-      try {
-        const response = await fetch('http://192.168.1.24:5001/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(toJSON)
-        });
-        
-        const reply = await response.json()
-        console.log('SUCCESS:', reply);
-        
-      } catch (error) {
-        console.log('ERROR:', error);
-      }        
+      let successfully_scanned = true
+      for (const val of Object.keys(toJSON)) {
+        if (val === null) {
+          successfully_scanned = false
+          break
+        }
+      }
+      if (successfully_scanned) {
+        // add to localstorage here
+
+        // meds key
+        const rawmeds = await AsyncStorage.getItem('meds')
+        const meds = rawmeds ? JSON.parse(rawmeds) : {}
+        const {name, ...no_name} = toJSON
+        meds[toJSON.name] = no_name   
+        await AsyncStorage.setItem('meds', JSON.stringify(meds)) 
+        console.log('item set in "meds"')
+        // times key
+        let baseTimes = {
+          '7': [],
+          '8': [],
+          '9': [],
+          '10': [],
+          '11': [],
+          '12': [],
+          '13': [],
+          '14': [],
+          '15': [],
+          '16': [],
+          '17': [],
+          '18': [],
+          '19': [],
+          '20': [],
+          '21': [],
+          '22': []
+        }
+        const raw = await AsyncStorage.getItem('times')
+        const times = raw ? JSON.parse(raw) : baseTimes
+        for (const num of toJSON.freq.split(',')) {
+          console.log(num)
+          if (!times[num].includes(toJSON.name)) times[num].push(toJSON.name)        
+        }
+        await AsyncStorage.setItem('times', JSON.stringify(times))    
+        console.log('item set in "times"')
+        // for testing
+        const raw1 = await AsyncStorage.getItem('meds')
+        const raw2 = await AsyncStorage.getItem('times')
+        console.log(JSON.parse(raw1))
+        console.log(JSON.parse(raw2))
+
+        try {
+          const response = await fetch('http://192.168.1.24:5001/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(toJSON)
+          });
+          
+          const reply = await response.json()
+          console.log('SUCCESS:', reply);
+          
+        } catch (error) {
+          console.log('ERROR:', error);
+        }          
+      } else {
+        setMessage('Please scan again')
+      }
     } catch (e) {
       setMessage(`Error taking photo: ${e.message}`);
     }
