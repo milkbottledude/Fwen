@@ -35,8 +35,8 @@ export default function Chat() {
   }
   const scrollRef = useRef(null)
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#2f2d2d'}} edges={['top', 'bottom']}>    
-      <KeyboardAvoidingView style={styles.container} behavior="padding" keyboardVerticalOffset={64}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#2f2d2d'}} edges={['top']}>    
+      <KeyboardAvoidingView style={styles.container} behavior="height">
         <StatusBar barStyle="dark-content" />
         {msgArr.length === 0 && (
           <View style={styles.notice}>
@@ -109,13 +109,13 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start'
   },
   scrollable: {
-    flex: 4
+    flex: 1
   },
   inputContainer: {
     // flex: 1,
     width: '100%',
     justifyContent: 'flex-end',
-    paddingBottom: 12,
+    paddingBottom: 14,
     // borderWidth: 2,
     // borderColor: 'white',    
   },

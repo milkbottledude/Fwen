@@ -48,6 +48,7 @@ export default function Scan() {
   }, [device]);
 
   const takePhoto = async () => {
+    // await AsyncStorage.clear() // wipes everything
     if (!camera.current) {
       setMessage('Camera reference not ready.');
       return;
@@ -106,7 +107,7 @@ export default function Scan() {
       console.log(toJSON)
       // TIME TO SEND REQ, AND setMessage('TEXT PARSED')
       let successfully_scanned = true
-      for (const val of Object.keys(toJSON)) {
+      for (const val of Object.values(toJSON)) {
         if (val === null) {
           successfully_scanned = false
           break
