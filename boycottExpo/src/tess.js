@@ -3,52 +3,50 @@ import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { Camera, useCameraDevices } from 'react-native-vision-camera';
 import MlkitOcr from 'react-native-mlkit-ocr';
 import AsyncStorage from '@react-native-async-storage/async-storage'; // for storing med details n times
+import notifee, { RepeatFrequency, TriggerType, AndroidImportance } from '@notifee/react-native';
 
 
 export default function Scan() {
+
+  // notifee pt 1, the channel, ignores if alr set up before
+  notifee.createChannel({
+    id: 'meds_alarms',
+    name: 'Meds Alarms Channel',
+    importance: AndroidImportance.HIGH
+  }).then(() => console.log('channel set up'))
+
+  // // notifee pt 1.5, checking alarm n notif permissions
+  // notifee.getNotificationSettings().then(settings => console.log(settings))
+  // notifee.requestPermission().then(() => console.log('permission requested'));
+
   const devices = useCameraDevices();
   const device = devices.find(d => d.position === 'back');
   const camera = useRef(null);
 
-  const [message, setMessage] = useState('Loading cam...');
+  const [message, setMessage] = useState();
   const [ready, setReady] = useState(false);
+  const [hasPermission, setHasPermission] = useState(false); 
 
-  useEffect(() => {
-    (async () => {
-      setMessage('Checking camera permission...');
-      const status = await Camera.getCameraPermissionStatus();
-      setMessage(`Current permission status: ${status}`);
-
-      if (status !== 'authorized') {
-        setMessage('Requesting camera permission...');
-        const newStatus = await Camera.requestCameraPermission();
-        setMessage(`New permission status: ${newStatus}`);
-        if (newStatus === 'authorized') {
-          setMessage('Camera permission granted.');
-        } // else {
-        //   setMessage('Camera permission denied.');
-        // }
-      } else {
-        setMessage('Camera permission already authorized.');
-      }
-    })();
-  }, []);
-
-  useEffect(() => {
-    if (device) {
-      setMessage(`Camera device found: ${device.name || 'Unnamed device'}`);
+useEffect(() => {
+  (async () => {
+    const status = Camera.getCameraPermissionStatus();
+    if (status === 'granted') {
+      setHasPermission(true);
     } else {
-      setMessage('No camera device available yet.');
+      const newStatus = await Camera.requestCameraPermission();
+      if (newStatus === 'granted') setMessage('Permission granted, please restart the app.');
     }
+  })();
+}, []);
 
-    if (device) {
-      setReady(true);
-      setMessage('Camera ready.');
-    }
-  }, [device]);
+useEffect(() => {
+  if (device && hasPermission) {
+    setReady(true);
+  }
+}, [device, hasPermission]);
 
   const takePhoto = async () => {
-    // await AsyncStorage.clear() // wipes everything
+    // await AsyncStorage.clear()
     if (!camera.current) {
       setMessage('Camera reference not ready.');
       return;
@@ -75,7 +73,7 @@ export default function Scan() {
             toJSON.purpose = txt
             break
           } else if (txt === txt.toUpperCase()) { // narrows down 'name'
-            if (txt.includes('TAB') || txt.includes('ML')) {
+            if (txt.includes(' TAB ') || txt.includes(' ML')) {
               if (toJSON.name === null) toJSON.name = txt
             }
           } else if (txt.slice(0, 5) === 'Take ') {
@@ -114,7 +112,6 @@ export default function Scan() {
         }
       }
       if (successfully_scanned) {
-        // add to localstorage here
 
         // meds key
         const rawmeds = await AsyncStorage.getItem('meds')
@@ -150,6 +147,40 @@ export default function Scan() {
         }
         await AsyncStorage.setItem('times', JSON.stringify(times))    
         console.log('item set in "times"')
+
+        const date = new Date(Date.now());
+        // Create a trigger notification for each timing
+        for (let [timeKey, medsArr] of Object.entries(times)) {
+          if (medsArr.length > 0) {
+            await notifee.cancelNotification(`${timeKey}_notif`) // boi
+            let title_text = medsArr.join(', ')
+            let body_text = medsArr.map(medname => meds[medname]['amt']).join(', ')
+
+            date.setHours(18); // date.setHours(Number(timeKey))
+            date.setMinutes(41);
+
+            // Create a time-based trigger
+            const trigger = {
+              type: TriggerType.TIMESTAMP,
+              timestamp: date.getTime(),
+              repeatFrequency: RepeatFrequency.DAILY
+            };
+
+            await notifee.createTriggerNotification(
+              {
+                id: `${timeKey}_notif`, // boi
+                title: title_text,
+                body: body_text,
+                android: {
+                  channelId: 'meds_alarms',
+                },
+              },
+              trigger,
+            )
+            console.log('notif set up')            
+          }   
+        }
+
         // for testing
         const raw1 = await AsyncStorage.getItem('meds')
         const raw2 = await AsyncStorage.getItem('times')
@@ -175,13 +206,14 @@ export default function Scan() {
         setMessage('Please scan again')
       }
     } catch (e) {
-      setMessage(`Error taking photo: ${e.message}`);
+      console.log(`Error taking photo: ${e.message}`);
+      setMessage(`Could not scan, please try again`)
     }
   };
 
   if (!ready) {
     return (
-      <View style={styles.center}>
+      <View style={styles.top_msg}>
         <Text>{message}</Text>
       </View>
     );
@@ -194,16 +226,17 @@ export default function Scan() {
         <Text style={{ color: 'white' }}>Take picture</Text>
       </TouchableOpacity>
 
-      {/* Current message overlay */}
-      <View style={styles.messageBox}>
+      {/* {message !== '' && ( */}
+      <View style={styles.msgBox}>
         <Text style={{ color: 'white' }}>{message}</Text>
-      </View>
+      </View>        
+      {/* )} */}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  top_msg: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   button: {
     position: 'absolute',
     bottom: 50,
@@ -212,7 +245,7 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 10,
   },
-  messageBox: {
+  msgBox: {
     position: 'absolute',
     top: 50,
     left: 10,

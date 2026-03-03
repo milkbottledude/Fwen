@@ -1,18 +1,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Camera Permission -->
+<!-- for dagon camera -->
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <!-- Audio Permission (if needed for recording) -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
-    <!-- Storage Permission (if needed for saving images) -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <!-- Declare Camera as a required feature -->
     <uses-feature android:name="android.hardware.camera" android:required="true" />
     <uses-feature android:name="android.hardware.camera.autofocus" android:required="true" />
+
+<!-- for notifee -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
       android:name=".MainApplication"
