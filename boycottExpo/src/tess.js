@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { Camera, useCameraDevices } from 'react-native-vision-camera';
 import MlkitOcr from 'react-native-mlkit-ocr';
 import AsyncStorage from '@react-native-async-storage/async-storage'; // for storing med details n times
-import notifee, { RepeatFrequency, TriggerType, AndroidImportance } from '@notifee/react-native';
+import notifee, { RepeatFrequency, TriggerType, AndroidImportance, AndroidCategory } from '@notifee/react-native';
 
 
 export default function Scan() {
@@ -15,9 +15,6 @@ export default function Scan() {
     importance: AndroidImportance.HIGH
   }).then(() => console.log('channel set up'))
 
-  // // notifee pt 1.5, checking alarm n notif permissions
-  // notifee.getNotificationSettings().then(settings => console.log(settings))
-  // notifee.requestPermission().then(() => console.log('permission requested'));
 
   const devices = useCameraDevices();
   const device = devices.find(d => d.position === 'back');
@@ -36,6 +33,7 @@ useEffect(() => {
       const newStatus = await Camera.requestCameraPermission();
       if (newStatus === 'granted') setMessage('Permission granted, please restart the app.');
     }
+    await notifee.requestPermission();
   })();
 }, []);
 
@@ -156,8 +154,8 @@ useEffect(() => {
             let title_text = medsArr.join(', ')
             let body_text = medsArr.map(medname => meds[medname]['amt']).join(', ')
 
-            date.setHours(18); // date.setHours(Number(timeKey))
-            date.setMinutes(41);
+            date.setHours(14); // date.setHours(Number(timeKey))
+            date.setMinutes(39) // date.setHours(0) // btw it takes 19 seconds after set up for the notif to appear, lil delayed
 
             // Create a time-based trigger
             const trigger = {
@@ -173,6 +171,10 @@ useEffect(() => {
                 body: body_text,
                 android: {
                   channelId: 'meds_alarms',
+                  category: AndroidCategory.ALARM,
+                  fullScreenAction: {
+                    id: 'default'
+                  }
                 },
               },
               trigger,

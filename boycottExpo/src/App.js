@@ -2,8 +2,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Chat from './Chat';
-import Alarm from './Alarm';
+import Alerts from './Alerts';
 import Scan from './tess';
+// import Alarm from './Alarm'
 
 const Tab = createBottomTabNavigator();
 
@@ -18,8 +19,9 @@ export default function App() {
         }}
       >
         <Tab.Screen name="Chat" component={Chat} />
-        <Tab.Screen name="Alarm" component={Alarm} />
+        <Tab.Screen name="Alerts" component={Alerts} />
         <Tab.Screen name="Scan" component={Scan} />
+        {/* <Tab.Screen name="Alarm" component={Alarm} options={{ tabBarButton: () => null }} /> */}
       </Tab.Navigator>
     </NavigationContainer>
   );
