@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { Camera, useCameraDevices } from 'react-native-vision-camera';
 import MlkitOcr from 'react-native-mlkit-ocr';
@@ -155,7 +155,7 @@ useEffect(() => {
             let body_text = medsArr.map(medname => meds[medname]['amt']).join(', ')
 
             date.setHours(14); // date.setHours(Number(timeKey))
-            date.setMinutes(39) // date.setHours(0) // btw it takes 19 seconds after set up for the notif to appear, lil delayed
+            date.setMinutes(4) // date.setHours(0) // btw it takes 19 seconds after set up for the notif to appear, lil delayed
 
             // Create a time-based trigger
             const trigger = {
