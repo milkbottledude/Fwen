@@ -37,7 +37,7 @@ export default function Chat() {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#2f2d2d'}} edges={['top']}>    
       <KeyboardAvoidingView style={styles.container} behavior="height">
-        <StatusBar barStyle="dark-content" />
+        {/* <StatusBar barStyle="dark-content" /> */}
         {msgArr.length === 0 && (
           <View style={styles.notice}>
             <Text style={styles.chatText}>First reponse may take 1-2mins</Text>
