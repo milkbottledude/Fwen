@@ -154,8 +154,8 @@ useEffect(() => {
             let title_text = medsArr.join(', ')
             let body_text = medsArr.map(medname => meds[medname]['amt']).join(', ')
 
-            date.setHours(14); // date.setHours(Number(timeKey))
-            date.setMinutes(4) // date.setHours(0) // btw it takes 19 seconds after set up for the notif to appear, lil delayed
+            date.setHours(Number(timeKey)); // date.setHours(Number(timeKey))
+            date.setMinutes(0) // date.setHours(0) // btw it takes 19 seconds after set up for the notif to appear, lil delayed
 
             // Create a time-based trigger
             const trigger = {
