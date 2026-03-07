@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View, StatusBar, Image, ScrollView, Pressable } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, ScrollView, Pressable } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { useCallback, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage'; // for storing med details n times
+import Ionicons from '@react-native-vector-icons/ionicons';
 
 export default function Alerts() {
 
@@ -51,10 +52,25 @@ export default function Alerts() {
                   <View key={time + medName} style={styles.Tile}>
                     <View style={styles.tile_top}>
                       <Text>{medName}</Text>
-                      <Image
-                        source={require('../assets/Fig-6.3-snap_after_masking.jpg')}
-                        style={{width: 20, height: 20}}
-                      />
+                      <Pressable onPress={async () => {
+                        const timesCopy = {...times}
+                        for (const [time2, medArr2] of Object.entries(timesCopy)) {
+                          timesCopy[time2] = medArr2.filter(med => med !== medName)
+                        }                        
+                        await AsyncStorage.setItem('times', JSON.stringify(timesCopy))
+                        setTimes(timesCopy)
+                        const medsCopy = {...meds}
+                        delete medsCopy[medName]
+                        await AsyncStorage.setItem('meds', JSON.stringify(medsCopy))
+                        setMeds(medsCopy)
+                        console.log('removed med from meds and times') // make function to remove med from times dict here
+                      }}>
+                        {/* <Image
+                          source={require('../assets/Fig-6.3-snap_after_masking.jpg')}
+                          style={{width: 20, height: 20}}
+                        /> */}
+                        <Ionicons name="trash-bin-outline" size={20} color='#007AFF'/>
+                      </Pressable>
                     </View>
                     <Text>{meds[medName].amt}</Text>
                     <Text>{meds[medName].purpose}</Text>
@@ -92,7 +108,7 @@ const styles = StyleSheet.create({
   },
   timeTile: {
     minWidth: '90%', 
-    marginTop: 19, 
+    marginTop: 29, 
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',

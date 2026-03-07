@@ -1,5 +1,5 @@
 import {useState, useRef} from 'react';
-import { StyleSheet, Text, View, TextInput, ScrollView, KeyboardAvoidingView, Pressable, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, TextInput, ScrollView, KeyboardAvoidingView, Pressable } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context' 
 
 export default function Chat() {

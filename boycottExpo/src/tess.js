@@ -146,7 +146,6 @@ useEffect(() => {
         await AsyncStorage.setItem('times', JSON.stringify(times))    
         console.log('item set in "times"')
 
-        const date = new Date(Date.now());
         // Create a trigger notification for each timing
         for (let [timeKey, medsArr] of Object.entries(times)) {
           if (medsArr.length > 0) {
@@ -154,8 +153,13 @@ useEffect(() => {
             let title_text = medsArr.join(', ')
             let body_text = medsArr.map(medname => meds[medname]['amt']).join(', ')
 
+            const date = new Date(Date.now())
             date.setHours(Number(timeKey)); // date.setHours(Number(timeKey))
             date.setMinutes(0) // date.setHours(0) // btw it takes 19 seconds after set up for the notif to appear, lil delayed
+
+            if (Number(timeKey) <= new Date().getHours()) {
+              date.setDate(date.getDate() + 1)
+            } // for when time is not in future
 
             // Create a time-based trigger
             const trigger = {
