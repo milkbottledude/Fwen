@@ -31,7 +31,9 @@ useEffect(() => {
       setHasPermission(true);
     } else {
       const newStatus = await Camera.requestCameraPermission();
-      if (newStatus === 'granted') setMessage('Permission granted, please restart the app.');
+      if (newStatus === 'granted') {
+        setMessage('Permission granted, please restart the app.')
+      }
     }
     await notifee.requestPermission();
   })();
@@ -45,12 +47,8 @@ useEffect(() => {
 
   const takePhoto = async () => {
     // await AsyncStorage.clear()
-    if (!camera.current) {
-      setMessage('Camera reference not ready.');
-      return;
-    }
+    setMessage('Scanning...')
     try {
-      setMessage('Label scanned successfully!');
       const photo = await camera.current.takePhoto();
       const uri = `file://${photo.path}`
       const result = await MlkitOcr.detectFromUri(uri);
@@ -110,7 +108,8 @@ useEffect(() => {
         }
       }
       if (successfully_scanned) {
-
+        setMessage('Label scanned successfully!');
+        setTimeout(() => setMessage(), 4000)        
         // meds key
         const rawmeds = await AsyncStorage.getItem('meds')
         const meds = rawmeds ? JSON.parse(rawmeds) : {}
@@ -209,11 +208,11 @@ useEffect(() => {
           console.log('ERROR:', error);
         }          
       } else {
-        setMessage('Please scan again')
+        setMessage('Image slightly blurry, please scan again')
       }
     } catch (e) {
       console.log(`Error taking photo: ${e.message}`);
-      setMessage(`Could not scan, please try again`)
+      setMessage('Please include the whole label and try again')
     }
   };
 
@@ -229,14 +228,12 @@ useEffect(() => {
     <View style={{ flex: 1 }}>
       <Camera ref={camera} style={{ flex: 1 }} device={device} isActive={true} photo={true} />
       <TouchableOpacity style={styles.button} onPress={takePhoto}>
-        <Text style={{ color: 'white' }}>Take picture</Text>
+        <Text style={{color: 'white', fontSize: 17}}>Scan</Text>
       </TouchableOpacity>
 
-      {/* {message !== '' && ( */}
-      <View style={styles.msgBox}>
-        <Text style={{ color: 'white' }}>{message}</Text>
+      <View style={[styles.msgBox, !message && {display: 'none'}]}>
+        <Text style={{color: 'white', fontSize: 19}}>{message}</Text>
       </View>        
-      {/* )} */}
     </View>
   );
 }
@@ -247,13 +244,20 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 50,
     alignSelf: 'center',
-    backgroundColor: 'black',
-    padding: 20,
-    borderRadius: 10,
+    backgroundColor: '#007AFF',
+    padding: 5,
+    // borderRadius: 10,
+    borderRadius: 40,
+    borderWidth: 5,
+    borderColor: 'white',
+    width: 77,
+    height: 77,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   msgBox: {
     position: 'absolute',
-    top: 50,
+    top: 140,
     left: 10,
     right: 10,
     padding: 10,
