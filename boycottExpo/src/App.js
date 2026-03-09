@@ -24,7 +24,7 @@ export default function App() {
               Chat: 'chatbubble-outline',
               Alerts: 'notifications-outline',
               Scan: 'scan-outline',
-              // Add: focused ? 'notifications' : 'notifications-outline',
+              Add: 'notifications-outline',
             }
             return <Ionicons name={icons[route.name]} size={size} color={color} />
           },
@@ -34,7 +34,8 @@ export default function App() {
         <Tab.Screen name="Alerts" component={Alerts} />
         <Tab.Screen name="Scan" component={Scan} />
         <Tab.Screen name="Add" component={Add} />
-        <Tab.Screen name="Alarm" component={Alarm} options={{ tabBarItemStyle: { display: 'none' } }} />
+        <Tab.Screen name="Alarm" component={Alarm} />
+        {/* <Tab.Screen name="Alarm" component={Alarm} options={{ tabBarItemStyle: { display: 'none' } }} /> */}
       </Tab.Navigator>
     </NavigationContainer>
   );
