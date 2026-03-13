@@ -23,6 +23,7 @@ export default function Scan() {
   const [message, setMessage] = useState();
   const [ready, setReady] = useState(false);
   const [hasPermission, setHasPermission] = useState(false); 
+  const [camActive, setCamActive] = useState(true)
 
 useEffect(() => {
   (async () => {
@@ -145,20 +146,31 @@ useEffect(() => {
         await AsyncStorage.setItem('times', JSON.stringify(times))    
         console.log('item set in "times"')
 
+        // for testing
+        let kill = false
+
         // Create a trigger notification for each timing
         for (let [timeKey, medsArr] of Object.entries(times)) {
-          if (medsArr.length > 0) {
+          if (medsArr.length > 0 && kill === false) {
+            console.log('killing')
+            kill = true
+            let timeStr;
+            if (timeKey > 12) {
+              timeStr = `${Number(timeKey) - 12}pm`
+            } else {
+              timeStr = `${timeKey}am`
+            }
             await notifee.cancelNotification(`${timeKey}_notif`) // boi
-            let title_text = medsArr.join(', ')
-            let body_text = medsArr.map(medname => meds[medname]['amt']).join(', ')
+            let title_text = `Its ${timeStr}! Time to take your meds`
+            let body_text =  `You have ${medsArr.length} types of meds to take`
 
             const date = new Date(Date.now())
-            date.setHours(Number(timeKey)); // date.setHours(Number(timeKey))
-            date.setMinutes(0) // date.setHours(0) // btw it takes 19 seconds after set up for the notif to appear, lil delayed
+            date.setHours(12); // date.setHours(Number(timeKey))
+            date.setMinutes(44) // date.setHours(0) // btw it takes 19 seconds after set up for the notif to appear, lil delayed
 
-            if (Number(timeKey) <= new Date().getHours()) {
-              date.setDate(date.getDate() + 1)
-            } // for when time is not in future
+            // if (Number(timeKey) <= new Date().getHours()) {
+            //   date.setDate(date.getDate() + 1)
+            // } // for when time is not in future
 
             // Create a time-based trigger
             const trigger = {
@@ -175,9 +187,9 @@ useEffect(() => {
                 android: {
                   channelId: 'meds_alarms',
                   category: AndroidCategory.ALARM,
-                  fullScreenAction: {
-                    id: 'default'
-                  }
+                  ongoing: true,
+                  pressAction: {id: 'default'},
+                  fullScreenAction: {id: 'default'}
                 },
               },
               trigger,
@@ -226,7 +238,14 @@ useEffect(() => {
 
   return (
     <View style={{ flex: 1 }}>
-      <Camera ref={camera} style={{ flex: 1 }} device={device} isActive={true} photo={true} />
+      <Camera 
+        ref={camera} 
+        style={{ flex: 1 }} 
+        device={device} 
+        isActive={camActive} 
+        photo={true} 
+        onError={() => setCamActive(false)}
+      />
       <TouchableOpacity style={styles.button} onPress={takePhoto}>
         <Text style={{color: 'white', fontSize: 17}}>Scan</Text>
       </TouchableOpacity>

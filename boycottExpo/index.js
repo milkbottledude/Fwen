@@ -8,8 +8,9 @@ import {name as appName} from './app.json';
 import notifee, {EventType} from '@notifee/react-native';
 import {navigationRef} from './src/App'
 
-notifee.onBackgroundEvent(async ({ type, deets }) => {
+notifee.onBackgroundEvent(async ({ type, detail }) => {
   if (type === EventType.DELIVERED) {
+    // await notifee.cancelNotification(detail.notification.id)
     setTimeout(() => {
     // const {title, body} = deets.notification
       navigationRef.current?.navigate('Alarm');

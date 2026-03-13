@@ -1,7 +1,9 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createRef } from 'react';
+import { createRef, useEffect } from 'react';
 import Ionicons from '@react-native-vector-icons/ionicons'
+import notifee, {EventType} from '@notifee/react-native';
+
 export const navigationRef = createRef();
 
 import Chat from './Chat';
@@ -13,6 +15,13 @@ import Add from './Add'
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  useEffect(() => {
+    return notifee.onForegroundEvent(({ type }) => {
+      if (type === EventType.DELIVERED) {
+        navigationRef.current?.navigate('Alarm');
+      }
+    });
+  }, []);  
   return (
     <NavigationContainer ref={navigationRef}>
       <Tab.Navigator
