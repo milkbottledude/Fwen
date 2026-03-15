@@ -17,8 +17,10 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   useEffect(() => {
     return notifee.onForegroundEvent(({ type }) => {
-      if (type === EventType.DELIVERED) {
-        navigationRef.current?.navigate('Alarm');
+      if (type === EventType.PRESS) {
+        setTimeout(() => {
+          navigationRef.current?.navigate('Alarm');
+        }, 200)
       }
     });
   }, []);  

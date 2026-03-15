@@ -4,9 +4,17 @@ import { Camera, useCameraDevices } from 'react-native-vision-camera';
 import MlkitOcr from 'react-native-mlkit-ocr';
 import AsyncStorage from '@react-native-async-storage/async-storage'; // for storing med details n times
 import notifee, { RepeatFrequency, TriggerType, AndroidImportance, AndroidCategory } from '@notifee/react-native';
-
+import levenshtein from 'fast-levenshtein'
 
 export default function Scan() {
+
+  const meds_db = { // will move this to a proper db soon
+    'Domperidone Tab 10mg (Motilium)': 'For Nausea/Vomiting',
+    'Hyoscine 10mg Tab (Buscopan)': 'For Stomach Pain/Cramps',
+    'Nexium Tab 40mg (Esomeprazole)': 'For Gastric Acid',
+    'Eviline Forte Susp 100ml': 'For Heartburn/Bloatedness'
+  }
+
 
   // notifee pt 1, the channel, ignores if alr set up before
   notifee.createChannel({
@@ -48,7 +56,7 @@ useEffect(() => {
 
   const takePhoto = async () => {
     // await AsyncStorage.clear()
-    setMessage('Scanning...')
+    setMessage('Scanning... please hold still')
     try {
       const photo = await camera.current.takePhoto();
       const uri = `file://${photo.path}`
@@ -89,6 +97,23 @@ useEffect(() => {
           }
         }
       }
+
+      // autocorrect with levenshtein
+      let ril = [null, 999]
+      Object.keys(meds_db).forEach(key => {
+        const dist = levenshtein.get(key.toUpperCase(), toJSON.name)
+        if (dist < ril[1]) {
+          ril[0] = key
+          ril[1] = dist
+        }
+      })      
+      console.log(ril[1])
+      console.log('FUCKERRRRRRRRRR')
+      if (ril[1] < 8) {
+        toJSON.name = ril[0]
+        toJSON.purpose = meds_db[ril[0]]        
+      }
+
       // now to convert rawfreq to freq
       let rawfreq = toJSON.rawfreq
       if (rawfreq.includes('once') || rawfreq.includes('daily')) {
@@ -160,13 +185,15 @@ useEffect(() => {
             } else {
               timeStr = `${timeKey}am`
             }
-            await notifee.cancelNotification(`${timeKey}_notif`) // boi
+            await notifee.cancelNotification(`${timeKey}_notif`) // reset the ting
             let title_text = `Its ${timeStr}! Time to take your meds`
-            let body_text =  `You have ${medsArr.length} types of meds to take`
+            let body_text =  `You have ${medsArr.length} type(s) of meds to take`
 
             const date = new Date(Date.now())
-            date.setHours(12); // date.setHours(Number(timeKey))
-            date.setMinutes(44) // date.setHours(0) // btw it takes 19 seconds after set up for the notif to appear, lil delayed
+            // date.setHours(Number(timeKey)) // btw it takes 19 seconds after set up for the notif to appear, lil delayed
+
+            // date.setMinutes(0) // 
+            date.setMinutes(date.getMinutes() + 1)
 
             // if (Number(timeKey) <= new Date().getHours()) {
             //   date.setDate(date.getDate() + 1)

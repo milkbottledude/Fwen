@@ -1,6 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Pressable, BackHandler, KeyboardAvoidingView } from "react-native";
+import { StyleSheet, Text, View, Pressable, BackHandler, KeyboardAvoidingView, Image } from "react-native";
+import notifee from '@notifee/react-native';
+import {navigationRef} from './App.js'
 
 // plan: are yu still experiencing: {} ? ----> No more meds for now! <close app button>
 
@@ -31,7 +33,14 @@ export default function AlarmScreen() {
   const [check, setCheck] = useState(true)
   const [medIndex, setMedIndex] = useState(0)
   const [wait, setWait] = useState(true)
-  const hour = '15' // String(new Date().getHours())
+  const hour = '8' // String(new Date().getHours())
+
+  const med_pics = {
+    'Hyoscine': require('../assets/Hyoscine_pic.jpg'),
+    'Domperidone': require('../assets/Domperidone_pic.jpg'),
+  };
+
+  const jic = require('../assets/jic_pic.jpg')
 
 
   useEffect(() => {
@@ -39,11 +48,12 @@ export default function AlarmScreen() {
       const rawmeds = await AsyncStorage.getItem('meds')
       setMeds(rawmeds ? JSON.parse(rawmeds) : {})
       const rawtimes = await AsyncStorage.getItem('times')
-      setTimes(rawtimes ? JSON.parse(rawtimes) : {})
+      setTimes(rawtimes ? JSON.parse(rawtimes) : times)
       setWait(false)
     }
     getStuff()    
   }, [])
+
 
 
   const handleCheck = () => {
@@ -55,14 +65,22 @@ export default function AlarmScreen() {
       )
     }
 
-    let medName = times[hour][medIndex]
-    if (check) {
-      if (medIndex >= times[hour].length && medIndex > 0) {
+    let medName = ''
+    if (Object.keys(times) > 0) {medName = times[hour][medIndex]}
+    if (check && Object.keys(times) > 0) {
+      if ((medIndex >= times[hour].length && medIndex > 0) ||times[hour].length === 0) {  
         return (
           <View style={styles.container}>
             <Text style={styles.title}>No more medicine to take for now :)</Text>
             <Pressable
-              onPress={() => BackHandler.exitApp()}
+              onPress={async () => {
+                notifee.cancelNotification(`${hour}_notif`)
+                await AsyncStorage.setItem('times', JSON.stringify(times))
+                await AsyncStorage.setItem('meds', JSON.stringify(meds))
+                navigationRef.current?.navigate('Chat')
+                // setTimeout(() => BackHandler.exitApp(), 200)
+                BackHandler.exitApp()
+              }}
               style={styles.button}
             >
               <Text style={{fontSize: 19}}>Exit App</Text>
@@ -78,6 +96,10 @@ export default function AlarmScreen() {
           problem = purpose.split('With')[1]
         } else if (purpose.includes('Anti')) {
           problem = purpose.split('Anti ')[1]
+        } else if (purpose.includes('For')) {
+          problem = purpose.split('For ')[1]
+        } else if (purpose.includes('for')) {
+          problem = purpose.split('for ')[1]
         } else {
           problem = purpose
         }
@@ -98,9 +120,18 @@ export default function AlarmScreen() {
               <Pressable 
                 // style={styles.no}
                 style={styles.button}
-                onPress={() => {
-                  setMedIndex(prev => prev + 1)
+                onPress={async () => {
+                  // setMedIndex(prev => prev + 1)
+                  const medsCopy = {...meds}
+                  const timesCopy = {...times}                  
                   // add logic here to remove medicine from times rotation
+                  for (const [time2, medArr2] of Object.entries(timesCopy)) {
+                    timesCopy[time2] = medArr2.filter(med => med !== medName)
+                  }                                          
+                  delete medsCopy[medName]
+                  setMeds(medsCopy)
+                  setTimes(timesCopy)
+                  console.log('removed med from meds and times')
                 }}
               >
                 <Text style={{fontSize: 19}}>No</Text>
@@ -109,11 +140,16 @@ export default function AlarmScreen() {
           </View>
         )
       }
-    } else {
+    } else if (Object.keys(times) > 0) {
       return (
         <View style={styles.container}>
-          <Text style={styles.supportText}>{meds[medName]['amt']} of</Text>
           {/* insert medicine image here */}
+          <Image
+            source={med_pics[medName.split(' ')[0]] || jic}
+            style={{width: 300, height: 400}}
+          />
+          {/* insert medicine image here */}          
+          <Text style={[styles.supportText, {marginTop: 25}]}>{meds[medName]['amt']} of</Text>
           <Text style={styles.title}>{medName}</Text>
           <Pressable
             onPress={() => {

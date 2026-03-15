@@ -25,9 +25,9 @@ export default function Alerts() {
   );
 
   return (
-    <ScrollView contentContainerStyle={styles.container} style={{borderColor: 'black', borderWidth: 10}}>
+    <ScrollView contentContainerStyle={styles.container}>
       {Object.keys(meds).length === 0 && (
-        <Text style={styles.title}>No meds for you to take right now :)</Text>
+        <Text style={[styles.title, {marginVertical: 100, marginHorizontal: 22}]}>No meds for you right now :)</Text>
       )}
       <StatusBar barStyle="dark-content" />
       {Object.entries(times).map(([time, medArr]) => (
