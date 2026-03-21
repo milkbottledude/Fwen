@@ -56,9 +56,9 @@ Fwen's medicine scanner removes the complications of taking medicine. Users simp
 
 After that, the reminders are added to the 'Alerts' tab. The medicine label says Hyoscine is to be taken 3 times a day, hence why it is displayed under the timings 8am, 3pm, and 10pm. Same with Domperidone, as shown in the video below.
 
-<video src="progress_pics/fwen_adding_meds.mp4" controls="controls" width="600" height="400">
-  Your browser does not support the video tag.
-</video>
+
+https://github.com/user-attachments/assets/1093a88d-04a2-4934-8bce-fe60a3c3167c
+
 
 When the time comes to take that particular medicine, the phone will show a notification at the top that stays there until acknowledged. When pressed, it brings the user to the Alarm tab. If the phone screen is off, the app will wake the screen and show the Alarm tab immediately regardless.
 
