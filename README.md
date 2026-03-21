@@ -1,6 +1,5 @@
 # Project: Fwen
 
-![banner](soon)
 
 - 🗪 Feel free to telegram me [@milkbottledude](https://t.me/milkbottledude) if you have any questions, or just want to chat :)
 
@@ -55,6 +54,14 @@ Fwen's medicine scanner removes the complications of taking medicine. Users simp
 
 - Fig b: Filtering only important text data from the image before sending to server
 
-After that, a reminder is added to the 'Alarm' tab. When the time comes to take that particular medicine, the phone will ring, as well as display the name of the medicine and the amount to take.
+After that, the reminders are added to the 'Alerts' tab. The medicine label says Hyoscine is to be taken 3 times a day, hence why it is displayed under the timings 8am, 3pm, and 10pm. Same with Domperidone, as shown in the video below.
+
+![adding-meds_mp4](progress_pics/fwen_adding_meds.mp4)
+
+When the time comes to take that particular medicine, the phone will show a notification at the top that stays there until acknowledged. When pressed, it brings the user to the Alarm tab. If the phone screen is off, the app will wake the screen and show the Alarm tab immediately regardless.
+
+![meds-notif_mp4](progress_pics/fwen_notif.mp4)
+
+In the Alarm tab, the app takes the user through each medicine one by one, making sure they are still experiencing the symptoms before prompting them to take the medicine. As you can see, when I clicked 'No' for nausea/vomiting, the app did not prompt me to take Domperidone, and removed the medicine from the 'Alerts' page as well while still keeping Hyoscine.
 
 So far, these are the features I have come up with. However, if you have any more ideas on how this app can help the elderly more, do reach out to me on telegram, I'm always open to suggestions :)
