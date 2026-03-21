@@ -66,8 +66,12 @@ export default function AlarmScreen() {
     }
 
     let medName = ''
-    if (Object.keys(times) > 0) {medName = times[hour][medIndex]}
-    if (check && Object.keys(times) > 0) {
+    if (Object.keys(times).length > 0) {
+      medName = times[hour][medIndex]
+      console.log(medName)
+      console.log(meds)
+    }
+    if (check && Object.keys(times).length > 0) {
       if ((medIndex >= times[hour].length && medIndex > 0) ||times[hour].length === 0) {  
         return (
           <View style={styles.container}>
@@ -140,7 +144,7 @@ export default function AlarmScreen() {
           </View>
         )
       }
-    } else if (Object.keys(times) > 0) {
+    } else if (Object.keys(times).length > 0) {
       return (
         <View style={styles.container}>
           {/* insert medicine image here */}

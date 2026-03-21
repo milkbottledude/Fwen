@@ -45,8 +45,8 @@ export default function App() {
         <Tab.Screen name="Alerts" component={Alerts} />
         <Tab.Screen name="Scan" component={Scan} />
         <Tab.Screen name="Add" component={Add} />
-        <Tab.Screen name="Alarm" component={Alarm} />
-        {/* <Tab.Screen name="Alarm" component={Alarm} options={{ tabBarItemStyle: { display: 'none' } }} /> */}
+        {/* <Tab.Screen name="Alarm" component={Alarm} /> */}
+        <Tab.Screen name="Alarm" component={Alarm} options={{tabBarItemStyle: { display: 'none' }, tabBarStyle: { display: 'none' }}} />
       </Tab.Navigator>
     </NavigationContainer>
   );
