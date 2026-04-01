@@ -5,9 +5,15 @@ import {SafeAreaView} from 'react-native-safe-area-context'
 export default function Chat() {
   const [msgArr, addMsg] = useState([])
   const [userMsg, setUserMsg] = useState("")
+  const [model, changeModel] = useState('gooba5.2_temu')
+  function changePersonality() {
+    changeModel(model === 'gooba5.2_temu' ? 'goggins5' : 'gooba5.2_temu')
+    addMsg([])
+  }
   async function submitInput() {
     console.log('ENTER BUTTON PRESSEDDDDD')
     addMsg([...msgArr, userMsg])
+    setTimeout(() => addMsg([...msgArr, userMsg, 'replying...']), 1900)    
     setUserMsg('')     
     try {
       const response = await fetch('http://192.168.1.24:11434/api/chat', {
@@ -16,7 +22,7 @@ export default function Chat() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'gooba5.2_temu', // goggins5
+          model: model, // goggins5
           messages: [{role: 'user', content: userMsg}],
           stream: false
         })
@@ -66,13 +72,22 @@ export default function Chat() {
             multiline
             maxLength={86}
           />
-          <Pressable
-            onPress={submitInput}
-            style={[styles.submitButton, userMsg.length === 0 && styles.disabledButton]}
-            disabled={userMsg.length === 0}
-          >
-            <Text>Enter</Text>
-          </Pressable>
+          <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Pressable
+              onPress={changePersonality}
+              style={[styles.submitButton, userMsg.length === 0 && styles.disabledButton]}
+              disabled={userMsg.length === 0}
+            >
+              <Text>CHANGE</Text>
+            </Pressable>  
+            <Pressable
+              onPress={submitInput}
+              style={[styles.submitButton, userMsg.length === 0 && styles.disabledButton]}
+              disabled={userMsg.length === 0}
+            >
+              <Text>Enter</Text>
+            </Pressable>                        
+          </View>
         </View>   
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -109,7 +124,10 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start'
   },
   scrollable: {
-    flex: 1
+    flex: 1,
+    marginBottom: 15,
+    // borderWidth: 3,
+    // borderColor: 'white'
   },
   inputContainer: {
     // flex: 1,
