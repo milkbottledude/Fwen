@@ -6,6 +6,10 @@
 ## Overview 🔍
 Welcome to Fwen, a React Native APK app made for the elderly!
 
+- APK download is available [here](https://drive.google.com/file/d/1K0hAg-zz4Eh10WzHDw2hc-MiSg9u12OG/view?usp=sharing), but chatbot and LLM text parsing are not available 24/7 due to the cost of running the server. However, the scanner and alarm features work fine.
+
+- If you want to test the medicine scanner and reminder alarm features, you can use the preallocated medicine label samples [here](progress_pics/sample_medicine_label_1.jpeg).
+
 Population aging is occuring at a rapid rate, not just in Singapore but in most developed countries as well.
 
 As I interact with more elderly, the more apparent it becomes that I need to do more for our nation's pioneers.
