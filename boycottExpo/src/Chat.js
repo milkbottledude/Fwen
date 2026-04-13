@@ -1,17 +1,22 @@
 import {useState, useRef} from 'react';
 import { StyleSheet, Text, View, TextInput, ScrollView, KeyboardAvoidingView, Pressable } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context' 
+import { isDisabled } from 'react-native/types_generated/Libraries/LogBox/Data/LogBoxData';
 
 export default function Chat() {
   const [msgArr, addMsg] = useState([])
   const [userMsg, setUserMsg] = useState("")
   const [model, changeModel] = useState('gooba5.2_temu')
+  const [isDisabled, changeDisabled] = useState(false)
   function changePersonality() {
-    changeModel(model === 'gooba5.2_temu' ? 'goggins5' : 'gooba5.2_temu')
+    if (model === 'gooba5.2_temu') changeModel('goggins5')
+    if (model === 'goggins5') changeModel('llama3.2:3b')
+    if (model === 'llama3.2:3b') changeModel('gooba5.2_temu')
     addMsg([])
   }
   async function submitInput() {
     console.log('ENTER BUTTON PRESSEDDDDD')
+    changeDisabled(true)
     addMsg([...msgArr, userMsg])
     setTimeout(() => addMsg([...msgArr, userMsg, 'replying...']), 1900)    
     setUserMsg('')     
@@ -31,7 +36,7 @@ export default function Chat() {
       const reply = await response.json()
       addMsg([...msgArr, userMsg, reply.message.content])      
       console.log('SUCCESS:', reply);
-      
+      changeDisabled(false)
     } catch (error) {
       console.log('ERROR:', error);
     }    
@@ -75,15 +80,15 @@ export default function Chat() {
           <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
             <Pressable
               onPress={changePersonality}
-              style={[styles.submitButton, userMsg.length === 0 && styles.disabledButton]}
-              disabled={userMsg.length === 0}
+              style={[styles.submitButton, isDisabled && styles.disabledButton, {backgroundColor: 'orange'}]}
+              disabled={isDisabled}
             >
-              <Text>CHANGE</Text>
+              <Text>{model}</Text>
             </Pressable>  
             <Pressable
               onPress={submitInput}
-              style={[styles.submitButton, userMsg.length === 0 && styles.disabledButton]}
-              disabled={userMsg.length === 0}
+              style={[styles.submitButton, (userMsg.length === 0 || isDisabled) && styles.disabledButton]}
+              disabled={userMsg.length === 0 || isDisabled}
             >
               <Text>Enter</Text>
             </Pressable>                        
