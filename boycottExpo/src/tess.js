@@ -45,6 +45,8 @@ useEffect(() => {
       }
     }
     await notifee.requestPermission();
+    await notifee.openBatteryOptimizationSettings(); // new
+    await notifee.openAlarmPermissionSettings(); // new
   })();
 }, []);
 
@@ -193,7 +195,8 @@ useEffect(() => {
             // date.setHours(Number(timeKey)) // btw it takes 19 seconds after set up for the notif to appear, lil delayed
 
             // date.setMinutes(0) // 
-            date.setMinutes(date.getMinutes() + 1)
+            // date.setMinutes(date.getMinutes() + 1)
+            date.setSeconds(date.getSeconds() + 10)
 
             // if (Number(timeKey) <= new Date().getHours()) {
             //   date.setDate(date.getDate() + 1)
@@ -203,7 +206,7 @@ useEffect(() => {
             const trigger = {
               type: TriggerType.TIMESTAMP,
               timestamp: date.getTime(),
-              repeatFrequency: RepeatFrequency.DAILY
+              repeatFrequency: RepeatFrequency.DAILY 
             };
 
             await notifee.createTriggerNotification(

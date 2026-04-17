@@ -20,8 +20,8 @@ export default function Chat() {
     addMsg([...msgArr, userMsg])
     setTimeout(() => addMsg([...msgArr, userMsg, 'replying...']), 1900)    
     setUserMsg('')     
-    try {
-      const response = await fetch('http://192.168.1.24:11434/api/chat', {
+    try { 
+      const response = await fetch('https://wind-technological-memo-animation.trycloudflare.com/api/chat', { // http://192.168.1.24:11434/api/chat
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
